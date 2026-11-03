@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>2026년 10월 판매조건 가이드 [카마스터]</title>
+<title>2026년 11월 판매조건 가이드 [카마스터]</title>
 <!-- v2: 고객 제안서 + 판촉지원금 추가 -->
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -448,7 +448,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sa
 <header class="hdr">
   <div style="display:flex;align-items:center">
     <span class="hdr-logo">🚗 판매조건 가이드</span>
-    <span class="hdr-badge">2026년 10월</span><span class="hdr-badge" style="background:#002c5f">카마스터 (직영)</span>
+    <span class="hdr-badge">2026년 11월</span><span class="hdr-badge" style="background:#002c5f">카마스터 (직영)</span>
   </div>
   <div style="display:flex;gap:2px">
     <button class="hdr-btn" onclick="openSearch()">🔍</button>
@@ -462,13 +462,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sa
 <div class="upd-bar" id="upd-bar">
   <span class="upd-bar-date">📋 최근 업데이트</span>
   <div class="upd-bar-txt" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-    <span style="color:#dc2626;font-weight:800">▣ [10월 신규] 캐스퍼·캐스퍼 일렉트릭 신규 차종 추가</span>
+    <span style="color:#dc2626;font-weight:800">▣ [11월 신규] K-세일페스타 — 아반떼·그랜저 인기사양 무상장착 / 싼타페 100만 or 60M 무이자 / G80·GV70 200만</span>
     <span style="color:#9ca3af">|</span>
-    <span style="color:#dc2626;font-weight:700">★ EV to 내연 전환 출고 혜택 200만/300만 (강화)</span>
+    <span style="color:#dc2626;font-weight:700">★ 11월 서프라이즈 타겟 10만원 (11/2~11/30)</span>
     <span style="color:#9ca3af">|</span>
-    <span>GV80 하이브리드 조기계약 프로모션 (10/16까지 계약, 계약금 50만)</span>
+    <span>디 올 뉴 투싼(NX5) 납기 약 4개월</span>
     <span style="color:#9ca3af">|</span>
-    <span>10월 판매조건 업데이트 완료</span>
+    <span>11월 판매조건 업데이트 완료 (판매조건표는 11~12월 기준)</span>
   </div>
   <button class="upd-bar-close" onclick="document.getElementById('upd-bar').style.display='none'" title="닫기">✕</button>
 </div>
@@ -536,12 +536,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sa
 
 <script>
 /* ===== DATA ===== */
-const MONTHS = ['5월이전','6월','7월','8월','9월'];
+const MONTHS = ['6월이전','7월','8월','9월','10월'];
 
 const VEHICLES = {
 ice:[
   {id:'casper', name:'캐스퍼', sub:'ICE', hl:null,
-   change:{type:'new',txt:'캐스퍼 신규 차종 추가'},
    summerFesta:{'일반':{}},
    tradeIn:null,
    finance:'[표준형] 24M이하 6.6% / 72M 7.9% / 108M 8.4%\n[모빌리티] 24M이하 5.6% / 72M 6.9% / 108M 7.4%\n※ 60M 초과 시 선수금: 일반할부 10%↑ / 모빌리티할부 1%↑',
@@ -549,95 +548,112 @@ ice:[
    targets:[],
    notes:'※ 트레이드-인 공통타겟 대상 제외 (캐스퍼)\n※ 블루멤버스 포인트: 구매횟수 1~6회+ 기준 (렌트/리스 이용 개인·법인회원은 구매횟수 무관 3만)\n※ 현대카드 할부결제 수수료: 2~3개월 무이자 / 4~15개월 1% / 16~18개월 4.5% / 20~60개월 5.9%'},
 
-  {id:'avante-fn', name:'디 올 뉴 아반떼', sub:'FN', hl:'퍼스트 무브 플랜 (유예율70%)',
-   change:{type:'new',txt:'디 올 뉴 아반떼 퍼스트 무브 플랜 신규 적용'},
+  {id:'avante-fn', name:'디 올 뉴 아반떼', sub:'FN', hl:'기본조건 100만 + KSF 인기사양 무상장착 100만 + 퍼스트 무브 플랜',
+   change:{type:'new',txt:'KSF 인기사양 무상장착 · 트레이드인(당사 50만/타사 30만) 신규 적용'},
    variants:['가솔린 2.0','HEV 1.6'],
    summerFesta:{'가솔린 2.0':{},'HEV 1.6':{}},
-   tradeIn:null,
-   financePromo:'디 올 뉴 아반떼 퍼스트 무브 플랜 (36M 차량반납유예형 할부)\n금리 2.8% / 유예율 70%\n※ 10만원대 월 납입금',
+   ksfAmt:100,
+   ksf:'인기사양 무상장착 100만원 상당 (AA1·BA1)\n모던: 슬림 디스플레이 35만 + 컨비니언스(일반 65만 / HEV 45만) — 두 사양 선택 시 최대 100만(일반)·80만(HEV), 1개만 선택 시 해당 옵션 금액만큼\n프리미엄: 플래티넘Ⅰ 93만 / 인스퍼레이션: 플래티넘Ⅱ 90만\n※ 무상장착 사양 미선택 시 타겟조건 적용 불가',
+   tradeIn:{corp:'50만',other:'30만'},
+   financePromo:'디 올 뉴 아반떼 퍼스트 무브 플랜 (36M 차량반납유예형 할부)\n금리 2.8% / 유예율 70%\n※ 10만원대 월 납입금 / 12/31 이전 출고건 적용 가능 (계약일 무관)',
    finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
    exhibitCar:'20만', saveAuto:'30만',
-   targets:['driving-plcc','ev-to-ice'],
-   notes:'※ 트레이드인 타겟 미해당 (캐스퍼·아반떼 신형 트레이드인 특별조건 제외)\n※ 가솔린 2.0 IVT / HEV 1.6 6DCT (45kW 하이브리드 모터)'},
+   targets:['goodfriend-200','driving-plcc'],
+   notes:'※ KSF 최대 혜택(판매조건표 기준): 일반 280만 / HEV 180만\n※ 추가 혜택: 워런티 플러스(보증 5년/10만km) or 바디케어 약 20만 상당, 토탈 카 케어 약 60만 상당\n※ 현장관리법인 타겟조건 제외\n※ 가솔린 2.0 IVT / HEV 1.6 6DCT (45kW 하이브리드 모터)'},
 
-  {id:'sonata', name:'쏘나타', variants:['일반','HEV'], hl:'5월이전 100만',
-   summerFesta:{'일반':{'5월이전':'100만'},'HEV':{'5월이전':'100만'}},
+  {id:'sonata', name:'쏘나타', variants:['일반','HEV'], hl:'전용카드 프로모션 50만',
+   summerFesta:{'일반':{},'HEV':{}},
    tradeIn:{corp:'50만',other:'30만'},
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
-   exhibitCar:'30만', saveAuto:'30만', targets:['ev-to-ice']},
+   exhibitCar:'20만', saveAuto:'30만',
+   targets:['card-promo-50','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200','driving-plcc'],
+   notes:'※ 전용카드 프로모션 50만: 현대차/제네시스 전용카드 1,000만원 이상 결제 + 세이브오토 이용 (25만 DC + 25만 캐시백)'},
 
-  {id:'grandeur-old', name:'그랜저 구형', variants:['일반','HEV'], hl:'5월이전 300만',
+  {id:'grandeur-old', name:'그랜저 구형', variants:['일반','HEV'], hl:'6월이전 300만',
    summerFesta:{
-     '일반':{'5월이전':'300만 (3.5가솔린 450만)'},
-     'HEV':{'5월이전':'300만'}
+     '일반':{'6월이전':'300만 (3.5가솔린 450만)'},
+     'HEV':{'6월이전':'300만'}
    },
-   tradeIn:{corp:'50만',other:'30만'},
+   tradeIn:{corp:'50만 (HEV 100만)',other:'30만 (HEV 50만)'},
+   finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
+   exhibitCar:'30만', saveAuto:'30만/50만',
+   targets:['porter-partner','kingdom-defender','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200']},
+
+  {id:'grandeur-new', name:'그랜저 신형', sub:'26MY', hl:'KSF 인기사양 무상장착 140만 + HEV 생산월 100만',
+   change:{type:'new',txt:'KSF 인기사양 무상장착 140만 신규 / HEV 트레이드인 100만 연장'},
+   variants:['일반/HEV'],
+   summerFesta:{
+     '일반/HEV':{'6월이전':'100만 (HEV)','7월':'100만 (HEV)','8월':'100만 (HEV)','9월':'100만 (HEV)','10월':'100만 (HEV)'}
+   },
+   ksfAmt:140,
+   ksf:'인기사양 무상장착 140만원 상당 (AA1·BA1)\n프리미엄: 현대 스마트센스Ⅰ 140만 / 익스클루시브: 현대 스마트센스Ⅱ 140만 / 캘리그래피: 100만 할인(스마트센스 기본 적용)\n※ 무상장착 사양 미선택 시 타겟조건 적용 불가',
+   tradeIn:{corp:'50만 (HEV 100만)',other:'30만 (HEV 50만)'},
    finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
    exhibitCar:'30만', saveAuto:'30만/50만',
-   targets:['porter-partner','kingdom-defender','family-love','ev-to-ice']},
-
-  {id:'grandeur-new', name:'그랜저 신형', sub:'26MY', hl:'5월이전 200만 + 7월 100만',
-   change:{type:'new',txt:'그랜저 신형 하이브리드, 추석 가족사랑 조건 대상 추가'},
-   summerFesta:{
-     '일반/HEV':{'5월이전':'200만','7월':'100만'}
-   },
-   financePromo:'재고한정 저금리 (5월 생산분 限)\n36M 3.0% / 48M 3.5% / 60M 4.0%\n※ 할인 조건 차감 없음',
-   finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
-   exhibitCar:'30만', saveAuto:'30만/50만',
-   targets:['porter-partner','kingdom-defender','family-love','ev-to-ice'],
-   notes:'※ 선택형 저금리는 생산월 조건 적용 차량 限 (미적용차량 저금리 불가)\n※ 그랜저 신형 하이브리드 2026 추석 가족사랑 조건 대상 추가'},
+   targets:['porter-partner','kingdom-defender','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ KSF 최대 혜택(판매조건표 기준): 일반 200만 / HEV 300만 (HEV는 생산월 조건 100만 포함)\n※ 추가 혜택: 토탈 카 케어 (약 60만 상당)\n※ 선택형 저금리는 생산월 조건 적용 차량 限 (미적용차량 저금리 불가)'},
 
   {id:'venue', name:'베뉴', hl:null,
    summerFesta:{'일반':{}},
    tradeIn:{corp:'50만',other:'30만'}, finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
-   exhibitCar:'30만', saveAuto:'30만', targets:['driving-plcc','ev-to-ice']},
+   exhibitCar:'20만', saveAuto:'30만',
+   targets:['before-service-20','corp-fleet-mgmt','goodfriend-200']},
 
   {id:'kona', name:'코나', variants:['일반','HEV'], hl:null,
    summerFesta:{'일반':{},'HEV':{}},
    tradeIn:{corp:'50만',other:'30만'},
    finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
-   exhibitCar:'30만', saveAuto:'30만', targets:['driving-plcc','ev-to-ice']},
+   exhibitCar:'20만', saveAuto:'30만',
+   targets:['before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200','driving-plcc']},
 
-  {id:'tucson', name:'디 올 뉴 투싼', variants:['일반','HEV'], hl:null,
+  {id:'tucson', name:'디 올 뉴 투싼', sub:'NX5', variants:['일반','HEV'], hl:'납기 4개월 / 생산월 조건 없음',
+   change:{type:'new',txt:'디 올 뉴 투싼(NX5) 11월 판매조건·납기(4개월) 반영'},
    summerFesta:{'일반':{},'HEV':{}},
-   tradeIn:{corp:'50만',other:'30만'}, finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
-   exhibitCar:'30만', saveAuto:'30만', targets:['rentcar-common','ev-to-ice']},
-
-  {id:'santafe', name:'싼타페', variants:['일반','HEV'], hl:'5월이전 200만 + 9월 100만',
-   summerFesta:{
-     '일반':{'5월이전':'200만','9월':'100만'},
-     'HEV':{'5월이전':'200만','9월':'100만'}
-   },
-   tradeIn:{corp:'50만',other:'30만'}, finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
-   exhibitCar:'30만', saveAuto:'30만',
-   targets:['family-love','porter-partner','kingdom-defender','rentcar-common','santafe-black','ev-to-ice'],
-   notes:'※ 가족사랑 100만: AA1, BA1 / 2026.09.01~10.31\n※ 블랙패키지 조건: 남양/영남/칠곡 출고 한정'},
-
-  {id:'palisade', name:'팰리세이드', variants:['일반','HEV'], hl:'5월이전 200만 + 9월 100만',
-   summerFesta:{
-     '일반':{'5월이전':'200만','9월':'100만 (27MY 제외)'},
-     'HEV':{'5월이전':'200만','9월':'100만 (27MY 제외)'}
-   },
-   tradeIn:{corp:'50만',other:'30만'}, finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
-   exhibitCar:'50만', saveAuto:'30만/50만',
-   targets:['family-love','porter-partner','kingdom-defender','rentcar-common','ev-to-ice'],
-   notes:'※ 가족사랑 100만: AA1, BA1 / 2026.09.01~10.31\n※ 전용카드 프로모션 26.10.01부 미운영'},
-
-  {id:'staria', name:'스타리아', variants:['일반','HEV'], hl:'5월이전 200만 + 9월 100만',
-   summerFesta:{
-     '일반':{'5월이전':'200만','9월':'100만'},
-     'HEV':{'5월이전':'200만','9월':'100만'}
-   },
-   tradeIn:{corp:'50만',other:'30만'},
+   tradeIn:null,
    finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
+   exhibitCar:'20만', saveAuto:'30만',
+   targets:['goodfriend-200'],
+   notes:'※ 신형 투싼(NX5): 생산월 조건 없음\n※ 트레이드인 · 현장관리법인 · 11월 서프라이즈 타겟 · 비포서비스 · 현장렌트사 타겟 대상 제외'},
+
+  {id:'santafe', name:'싼타페', variants:['일반','HEV'], hl:'KSF 100만 또는 60M 무이자(2,000대) + 9월이전 100만',
+   change:{type:'new',txt:'KSF 100만 또는 60M 무이자(2,000대 한정) 신규'},
+   summerFesta:{
+     '일반':{'6월이전':'100만','7월':'100만','8월':'100만','9월':'100만'},
+     'HEV':{'6월이전':'100만','7월':'100만','8월':'100만','9월':'100만'}
+   },
+   ksfAmt:100,
+   ksf:'KSF 특별조건 100만 또는 60M 무이자 (2,000대 한정) (AA1·BA1)\n※ 무이자 선택 시 KSF 100만 차감 / 타겟조건 202611A21 싼타페 무이자 적용 → 판매유형코드 JM\n※ 무이자 타겟과 KSF 100만 타겟 중복 불가',
+   tradeIn:{corp:'50만 (HEV 100만)',other:'30만 (HEV 50만)'},
+   finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
+   financePromo:'싼타페 60M 무이자 프로모션 (2,000대 한정)\n무이자 선택 시 KSF 100만 차감\n※ 모빌리티 할부 한정 / 법인 이용 불가 / 최소 선수율 20% 이상\n※ 종료 전 사전 현장 안내 예정',
    exhibitCar:'30만', saveAuto:'30만',
-   targets:['family-love','porter-partner','kingdom-defender','rentcar-common','ev-to-ice'],
-   notes:'※ 가족사랑 100만: AA1, BA1 / 2026.09.01~10.31 (EV 제외)\n※ 생산월조건 특장 제외'},
+   targets:['porter-partner','kingdom-defender','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200','santafe-black'],
+   notes:'※ KSF 최대 혜택: 260만 or 60M 무이자 + 60만 (KSF 100만 + 9월이전 100만 + 토탈 카 케어 60만 상당)\n※ 블랙패키지 조건: 남양/영남/칠곡 출고 한정'},
+
+  {id:'palisade', name:'팰리세이드', variants:['일반','HEV'], hl:'런칭모델 限 200만 또는 60M 무이자(2,000대) / 27MY 100만',
+   change:{type:'new',txt:'60M 무이자 프로모션(2,000대 한정) 신규'},
+   summerFesta:{
+     '일반':{'6월이전':'200만 (런칭모델 限 / 27MY 100만)','7월':'200만 (런칭모델 限 / 27MY 100만)','8월':'200만 (런칭모델 限 / 27MY 100만)','9월':'200만 (런칭모델 限 / 27MY 100만)','10월':'100만'},
+     'HEV':{'6월이전':'200만 (런칭모델 限 / 27MY 100만)','7월':'200만 (런칭모델 限 / 27MY 100만)','8월':'200만 (런칭모델 限 / 27MY 100만)','9월':'200만 (런칭모델 限 / 27MY 100만)','10월':'100만'}
+   },
+   tradeIn:{corp:'50만 (HEV 100만)',other:'30만 (HEV 50만)'},
+   finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
+   financePromo:'팰리세이드 60M 무이자 프로모션 (런칭모델 소진 or 2,000대 한정)\n무이자 선택 시 생산월 조건 200만 차감 (판매유형코드 JM)\n※ 모빌리티 할부 한정 / 법인 이용 불가 / 최소 선수율 20% 이상',
+   exhibitCar:'50만', saveAuto:'30만/50만',
+   targets:['porter-partner','kingdom-defender','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ KSF 최대 혜택: 200만 or 무이자 (10월 이전 100~200만 or 60M 무이자)'},
+
+  {id:'staria', name:'스타리아', variants:['일반','HEV'], hl:'전용카드 프로모션 50만 / 국민지킴이·상생파트너',
+   summerFesta:{'일반':{},'HEV':{}},
+   tradeIn:{corp:'50만 (HEV 100만)',other:'30만 (HEV 50만)'},
+   finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
+   exhibitCar:'20만', saveAuto:'30만',
+   targets:['card-promo-50','porter-partner','kingdom-defender','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ 전용카드 프로모션 50만: 스타리아 (HEV 포함, EV 제외)\n※ 국민지킴이는 EV 제외'},
 ],
 
 ev:[
   {id:'casper-ev', name:'캐스퍼 일렉트릭', hl:null,
-   change:{type:'new',txt:'캐스퍼 일렉트릭 신규 차종 추가'},
    summerFesta:{'일반':{}},
    tradeIn:null,
    finance:'[표준형] 24M이하 6.6% / 72M 7.9% / 108M 8.4%\n[모빌리티] 24M이하 5.6% / 72M 6.9% / 108M 7.4%\n※ 60M 초과 시 선수금: 일반할부 10%↑ / 모빌리티할부 1%↑',
@@ -645,81 +661,78 @@ ev:[
    targets:[],
    notes:'※ 트레이드-인 공통타겟(EV) 대상 제외 (캐스퍼EV)\n※ 블루멤버스 포인트: 구매횟수 1~6회+ 기준 (렌트/리스 이용 개인·법인회원은 구매횟수 무관 3만)\n※ 현대카드 할부결제 수수료: 2~3개월 무이자 / 4~15개월 1% / 16~18개월 4.5% / 20~60개월 5.9%'},
 
-  {id:'nexo', name:'넥쏘', hl:'런칭모델(구형) 200만 + 트레이드인 200만',
-   summerFesta:{'일반':{'5월이전':'200만 (구형 限)','6월':'200만 (구형 限)','7월':'200만 (구형 限)','8월':'200만 (구형 限)'}},
+  {id:'nexo', name:'넥쏘', hl:'런칭모델(구형) 限 200만 + 트레이드인 200만',
+   summerFesta:{'일반':{'6월이전':'200만 (구형 限)','7월':'200만 (구형 限)','8월':'200만 (구형 限)','9월':'200만 (구형 限)'}},
    tradeIn:{corp:'200만 (넥쏘 또는 넥쏘 外 차종 매각 가능)',other:'100만'},
    financePromo:'넥쏘 부담DOWN (39M 차량반납 유예형 할부)\n금리 1.8% / 최대 유예율 45%\n현대 EV/FCEV 월 10만원대 납입금',
    finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
    evBenefit:'40만원 수소충전 크레딧',
    exhibitCar:'20만', saveAuto:'30만/50만',
-   targets:['tradein'],
-   notes:'※ 런칭모델(구형) 한정 200만, 9월 조건 없음\n※ 트레이드인: 당사(넥쏘 또는 넥쏘 外 차종 매각) 200만 + 타사 100만'},
+   targets:['tradein','before-service-20','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ 런칭모델(구형) 한정 200만, 10월 조건 없음\n※ 트레이드인: 당사(넥쏘 또는 넥쏘 外 차종 매각) 200만 + 타사 100만'},
 
-  {id:'kona-ev', name:'코나 EV', hl:'100만대기념 150만 + 가족사랑 100만',
-   ioniq100k:'150만',
-   summerFesta:{'일반':{'5월이전':'100만','6월':'100만','7월':'100만'}},
+  {id:'kona-ev', name:'코나 EV', hl:'7월이전 생산 100만 + 트레이드인 100만',
+   summerFesta:{'일반':{'6월이전':'100만','7월':'100만'}},
    tradeIn:{corp:'100만',other:'50만'},
    financePromo:'현대EV 부담DOWN (36M 차량반납 유예형 할부)\n금리 2.8% / 최대 유예율 60% (NE,CE,SX EV)\n※ 현대 EV 재구매 시 -0.5% 금리 인하\n※ 스트레스프리 패키지: 바디케어3년 + 자동차보험 자기부담금 지원',
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    evBenefit:'【기본】에브리케어 20만 충전크레딧\n【더블UP】현대캐피탈 할부 이용 시 추가 20만 (XB,JC 제외)',
    exhibitCar:'30만', saveAuto:'30만',
-   targets:['family-love','driving-plcc','tradein']},
+   targets:['before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200','driving-plcc','tradein']},
 
-  {id:'ioniq5', name:'아이오닉 5', variants:['일반','N'], hl:'100만대기념 150만 + 가족사랑 100만',
-   ioniq100k:'150만 (N 제외)',
-   summerFesta:{'일반':{'5월이전':'100만','6월':'100만','7월':'100만'},'N':{'5월이전':'100만','6월':'100만','7월':'100만'}},
+  {id:'ioniq5', name:'아이오닉 5', variants:['일반','N'], hl:'7월이전 생산 100만 + 트레이드인 100만',
+   summerFesta:{'일반':{'6월이전':'100만','7월':'100만'},'N':{'6월이전':'100만','7월':'100만'}},
    tradeIn:{corp:'100만',other:'50만'},
    financePromo:'현대EV 부담DOWN (36M 차량반납 유예형 할부)\n금리 2.8% / 최대 유예율 60%\n※ 현대 EV 재구매 시 -0.5% 금리 인하\n※ 스트레스프리 패키지 포함',
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    evBenefit:'【기본】에브리케어 20만 충전크레딧\n【더블UP】현대캐피탈 할부 이용 시 추가 20만 (XB,JC 제외)',
    exhibitCar:'30만 (N은 50만)', saveAuto:'30만',
-   targets:['family-love'],
-   notes:'※ 아이오닉5 N: 아이오닉100만대 기념/가족사랑 조건 미해당, 생산월 조건은 적용\n※ N-FINANCE: 차량반납유예할부 유예율 최대 90% 또는 렌트리스 월납입금 할인'},
+   targets:['before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200','tradein'],
+   notes:'※ N-FINANCE: 차량반납유예할부 유예율 최대 90% 또는 렌트리스 월납입금 할인\n※ 아이오닉5 N은 11월 4주차 로트 생산 예정'},
 
-  {id:'ioniq6', name:'아이오닉 6', variants:['일반','N'], hl:'100만대기념 150만 + 가족사랑 100만',
-   ioniq100k:'150만 (N 제외)',
-   summerFesta:{'일반':{'5월이전':'100만','6월':'100만','7월':'100만'},'N':{'5월이전':'100만','6월':'100만','7월':'100만'}},
+  {id:'ioniq6', name:'아이오닉 6', variants:['일반','N'], hl:'7월이전 생산 100만 + 트레이드인 100만',
+   summerFesta:{'일반':{'6월이전':'100만','7월':'100만'},'N':{'6월이전':'100만','7월':'100만'}},
    tradeIn:{corp:'100만',other:'50만'},
    financePromo:'현대EV 부담DOWN (36M 차량반납 유예형 할부)\n금리 2.8% / 최대 유예율 60%\n※ 현대 EV 재구매 시 -0.5% 금리 인하',
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    evBenefit:'【기본】에브리케어 20만 충전크레딧\n【더블UP】현대캐피탈 할부 이용 시 추가 20만 (XB,JC 제외)',
-   exhibitCar:'30만 (N은 50만)', saveAuto:'30만', targets:['family-love'],
-   notes:'※ 아이오닉6 N: 아이오닉100만대 기념/가족사랑 조건 미해당, 생산월 조건은 적용\n※ N-FINANCE: 차량반납유예할부 유예율 최대 90% 또는 렌트리스 월납입금 할인'},
+   exhibitCar:'30만 (N은 50만)', saveAuto:'30만',
+   targets:['before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200','tradein'],
+   notes:'※ N-FINANCE: 차량반납유예할부 유예율 최대 90% 또는 렌트리스 월납입금 할인'},
 
-  {id:'ioniq9', name:'아이오닉 9', hl:'100만대기념 150만 + 최대 200만 + 가족사랑 100만',
-   ioniq100k:'150만',
-   summerFesta:{'일반':{'5월이전':'200만','6월':'200만','7월':'200만'}},
+  {id:'ioniq9', name:'아이오닉 9', hl:'7월이전 생산 200만 + 트레이드인 100만',
+   summerFesta:{'일반':{'6월이전':'200만','7월':'200만'}},
    tradeIn:{corp:'100만',other:'50만'},
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    evBenefit:'【기본】에브리케어 20만 충전크레딧\n【더블UP】현대캐피탈 할부 이용 시 추가 20만 (XB,JC 제외)',
-   exhibitCar:'50만', saveAuto:'30만/50만', targets:['family-love'],
-   notes:'※ 10월부 금융프로모션(부담DOWN) 미운영\n※ 타사차종 매각 트레이드인 50만 신규 가능 (기존 당사매각 100만만 가능)'},
+   exhibitCar:'50만', saveAuto:'30만/50만',
+   targets:['before-service-20','corp-fleet-mgmt','goodfriend-200','tradein'],
+   notes:'※ 금융프로모션(부담DOWN) 미운영\n※ 타사차종 매각 트레이드인 50만 가능'},
 
-  {id:'porter-ev', name:'포터 EV', hl:'100만대기념 100만 + 최대 100만',
-   ioniq100k:'100만',
-   summerFesta:{'일반':{'5월이전':'100만','6월':'100만','7월':'100만'}},
+  {id:'porter-ev', name:'포터 EV', hl:'7월이전 생산 100만 + 트레이드인 100만',
+   summerFesta:{'일반':{'6월이전':'100만','7월':'100만'}},
    tradeIn:{corp:'100만',other:'100만'},
    financePromo:'포터EV 부담DOWN (36M 차량반납 유예형 할부 限)\n금리 2.8% / 최대 유예율 50%\n※ 만기 시 재할부 또는 현금 상환 必 (차량반납으로 유예금 등가 상환 불가)',
-   finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
+   finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    exhibitCar:'20만', saveAuto:'20만/30만',
-   targets:['tradein'],
-   notes:'※ EV 충전크레딧 10월부 미지급'},
+   targets:['before-service-20','corp-fleet-mgmt','goodfriend-200','tradein'],
+   notes:'※ EV 충전크레딧 미지급'},
 
-  {id:'st1', name:'ST1', hl:'100만대기념 100만 + 5월이전 100만',
-   ioniq100k:'100만 (샤시캡 제외)',
-   summerFesta:{'일반(샤시캡 제외)':{'5월이전':'100만','6월':'100만','7월':'100만'}},
+  {id:'st1', name:'ST1', hl:'7월이전 생산 100만 + 트레이드인 100만',
+   summerFesta:{'일반(샤시캡 제외)':{'6월이전':'100만','7월':'100만'}},
    tradeIn:{corp:'100만',other:'100만'},
    finance:'36M 5.7% / 48M 5.8% / 60M 5.9%',
-   exhibitCar:'30만', saveAuto:'20만/30만', targets:[],
-   notes:'※ ST1 샤시캡: 아이오닉100만대 기념 미해당\n※ 모빌리티 할부 금리 5.7~5.9%로 인상 (기존 5.4~5.6%)'},
+   exhibitCar:'30만', saveAuto:'20만/30만',
+   targets:['before-service-20','corp-fleet-mgmt','goodfriend-200','tradein'],
+   notes:'※ ST1 생산월 조건: 샤시캡 제외\n※ 모빌리티 할부 금리 5.7~5.9%'},
 
   {id:'staria-ev', name:'스타리아 EV', hl:'전시차 20만 + 세이브오토 30만',
-   change:{type:'new',txt:'스타리아 EV 충전크레딧/홈충전기 혜택 신규 적용'},
    summerFesta:{'일반':{}},
    tradeIn:null,
    finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
    evBenefit:'20만 충전크레딧 또는 홈충전기',
-   exhibitCar:'20만', saveAuto:'30만', targets:[]},
+   exhibitCar:'20만', saveAuto:'30만',
+   targets:['before-service-20','corp-fleet-mgmt','goodfriend-200']},
 ],
 
 genesis:[
@@ -731,93 +744,98 @@ genesis:[
    genesisFinance:'파이낸스 렌트/리스 특화\n리스 73만~/월 | 렌트 81만~/월\nTHE BETTER CHOICE 적용 시 리스 69만~/월 | 렌트 76만~/월',
    exhibitCar:'50만', saveAuto:'30만/50만',
    bm:['15만','20만','30만','40만','50만','60만'],
-   targets:['tradein']},
+   targets:['tradein','porter-partner','before-service-20','corp-fleet-mgmt','goodfriend-200']},
 
-  {id:'g80', name:'G80', hl:'5월이전재고 5%',
-   genesisStock:{pre6:'5%',jul:'5%'},
+  {id:'g80', name:'G80', hl:'KSF 200만 + 8월이전 재고 5%',
+   change:{type:'new',txt:'KSF 특별조건(스페셜 오퍼) 200만 신규'},
+   ksfAmt:200,
+   ksf:'KSF 특별조건 (스페셜 오퍼) 200만 (AA1·BA1)\n※ 상생파트너 타겟조건 50만 별도',
+   genesisStock:{pre6:'5%'},
    genesisPromo:'GS칼텍스 고급유 할인 프로모션 (내연기관)',
    tradeIn:{corp:'200만',other:'100만'},
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    genesisFinance:'파이낸스 렌트/리스 특화\n리스 98만~/월 | 렌트 107만~/월\nTHE BETTER CHOICE 적용 시 리스 93만~/월 | 렌트 98만~/월',
    exhibitCar:'50만', saveAuto:'30만/50만',
    bm:['20만','40만','50만','60만','70만','80만'],
-   targets:['tradein']},
+   targets:['tradein','porter-partner','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ KSF 최대 혜택: 200만 + 8월 이전 생산 재고 5% (약 600만원 상당)'},
 
-  {id:'g80ev', name:'G80 EV', hl:'5월이전재고 5% (신규)',
-   change:{type:'new',txt:'G80 EV 5월이전 생산 재고할인 5% 신규 적용'},
-   genesisStock:{pre6:'5%',jul:'5%'},
-   genesisPromo:'대한항공 마일리지 1만 마일리지 적립 (EV)',
+  {id:'g80ev', name:'G80 EV', hl:null,
+   genesisPromo:'대한항공 마일리지 1만 마일리지 적립 (EV)\n제네시스 EV 웰컴 크레딧 20만',
    tradeIn:{corp:'200만',other:'100만'},
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    genesisFinance:'파이낸스 렌트/리스 특화 (평균보조금 479만원 반영)\n리스 118만~/월 | 렌트 140만~/월\nTHE BETTER CHOICE 적용 시 리스 111만~/월 | 렌트 133만~/월',
    exhibitCar:'50만', saveAuto:'30만/50만',
    bm:['20만','40만','50만','60만','70만','80만'],
-   targets:['tradein']},
+   targets:['tradein','porter-partner','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ 11월 판매조건표에 생산월 재고할인 기재 없음'},
 
-  {id:'g90', name:'G90', hl:'5월이전재고 7% (신규)',
-   change:{type:'new',txt:'G90 5월이전 생산 재고할인 7% 신규 적용'},
-   genesisStock:{pre6:'7%',jul:'7%'},
+  {id:'g90', name:'G90', hl:null,
+   tradeIn:{corp:'200만',other:'100만'},
    genesisPromo:'GS칼텍스 고급유 할인 프로모션',
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    genesisFinance:'파이낸스 렌트/리스 특화\n리스 165만~/월 | 렌트 177만~/월\nTHE BETTER CHOICE 적용 시 리스 157만~/월 | 렌트 166만~/월',
    exhibitCar:'100만', saveAuto:'30만/50만',
    bm:['25만','50만','60만','70만','80만','90만'],
-   targets:[]},
+   targets:['tradein','porter-partner','before-service-20','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ 11월 판매조건표에 생산월 재고할인 기재 없음'},
 
-  {id:'gv60', name:'GV60', hl:'5월이전재고 5% (신규)',
-   change:{type:'new',txt:'GV60 5월이전 생산 재고할인 5% 신규 적용'},
-   genesisStock:{pre6:'5%',jul:'5%'},
-   genesisPromo:'대한항공 마일리지 1만 마일리지 적립 (EV)',
+  {id:'gv60', name:'GV60', hl:null,
+   tradeIn:{corp:'200만',other:'100만'},
+   genesisPromo:'대한항공 마일리지 1만 마일리지 적립 (EV)\n제네시스 EV 웰컴 크레딧 20만',
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    genesisFinance:'파이낸스 렌트/리스 특화\n리스 86만~/월 | 렌트 105만~/월\nTHE BETTER CHOICE 적용 시 리스 81만~/월 | 렌트 100만~/월',
    exhibitCar:'50만', saveAuto:'30만/50만',
    bm:['10만','15만','20만','30만','40만','50만'],
-   targets:[]},
+   targets:['tradein','porter-partner','before-service-20','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ 11월 판매조건표에 생산월 재고할인 기재 없음'},
 
-  {id:'gv70', name:'GV70', hl:'5월이전재고 3%',
-   genesisStock:{pre6:'3%',jul:'3%'},
+  {id:'gv70', name:'GV70', hl:'KSF 200만 + 8월이전 재고 3%',
+   change:{type:'new',txt:'KSF 특별조건(스페셜 오퍼) 200만 신규'},
+   ksfAmt:200,
+   ksf:'KSF 특별조건 (스페셜 오퍼) 200만 (AA1·BA1)\n※ 상생파트너 타겟조건 50만 별도',
+   genesisStock:{pre6:'3%'},
    genesisPromo:'GS칼텍스 고급유 할인 프로모션',
    tradeIn:{corp:'200만',other:'100만'},
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    genesisFinance:'파이낸스 렌트/리스 특화\n리스 84만~/월 | 렌트 94만~/월\nTHE BETTER CHOICE 적용 시 리스 79만~/월 | 렌트 86만~/월',
    exhibitCar:'50만', saveAuto:'30만/50만',
    bm:['15만','20만','30만','40만','50만','60만'],
-   targets:[]},
+   targets:['tradein','porter-partner','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ KSF 최대 혜택: 200만 + 8월 이전 생산 재고 3% (약 400만원 상당)'},
 
-  {id:'gv70ev', name:'GV70 EV', hl:'5월이전재고 5% (신규)',
-   change:{type:'new',txt:'GV70 EV 5월이전 생산 재고할인 5% 신규 적용'},
-   genesisStock:{pre6:'5%',jul:'5%'},
+  {id:'gv70ev', name:'GV70 EV', hl:null,
    tradeIn:{corp:'200만',other:'100만'},
-   genesisPromo:'대한항공 마일리지 1만 마일리지 적립 (EV)',
+   genesisPromo:'대한항공 마일리지 1만 마일리지 적립 (EV)\n제네시스 EV 웰컴 크레딧 20만',
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    genesisFinance:'파이낸스 렌트/리스 특화 (평균보조금 463만원 반영)\n리스 103만~/월 | 렌트 122만~/월\nTHE BETTER CHOICE 적용 시 리스 97만~/월 | 렌트 116만~/월',
    exhibitCar:'50만', saveAuto:'30만/50만',
    bm:['15만','20만','30만','40만','50만','60만'],
-   targets:[]},
+   targets:['tradein','porter-partner','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ 11월 판매조건표에 생산월 재고할인 기재 없음'},
 
-  {id:'gv80', name:'GV80', sub:'쿠페 포함', hl:'5월이전재고 4%',
-   change:{type:'dn',txt:'GV80 생산재고 할인율 5%→4% 조정'},
-   genesisStock:{pre6:'4%',jul:'4%'},
+  {id:'gv80', name:'GV80', sub:'쿠페 포함', hl:'하이브리드 조기계약 (계약금 50만)',
    genesisPromo:'GS칼텍스 고급유 할인 프로모션',
    tradeIn:{corp:'200만',other:'100만'},
    finance:'36M 4.9% / 48M 5.0% / 60M 5.1%',
    genesisFinance:'파이낸스 렌트/리스 특화\n리스 105만~/월 | 렌트 117만~/월\nTHE BETTER CHOICE 적용 시 리스 99만~/월 | 렌트 107만~/월',
    exhibitCar:'50만', saveAuto:'30만/50만',
    bm:['20만','40만','50만','60만','70만','80만'],
-   targets:['tradein','gv80-hev-early'],
-   notes:'※ 5월이전 생산 재고 4% 할인 (9월 5%→10월 4% 조정)\n※ GV80 하이브리드 조기계약 프로모션: 10/16 이내 계약, 12/31 이내 출고 시 계약금 50만'},
+   targets:['tradein','gv80-hev-early','porter-partner','before-service-20','rentcar-common','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ 11월 판매조건표에 생산월 재고할인 기재 없음\n※ GV80 하이브리드 조기계약 프로모션: 10/16 이내 계약, 12/31 이내 출고 시 계약금 50만\n※ GV80 HEV는 트레이드인·상생파트너 타겟 제외'},
 ],
 
 truck:[
-  {id:'porter-lp', name:'포터 LPDi', hl:'150만 (8~9월 특장 제외) + 상생파트너 40만',
-   summerFesta:{'일반':{'5월이전':'150만','6월':'150만','7월':'150만','8월':'150만 (특장 제외)','9월':'150만 (특장 제외)'}},
-   tradeIn:{corp:'100만',other:null},
-   finance:'36M 6.5% / 48M 6.6% / 60M 6.7% (선수금 10% 이상)',
-   exhibitCar:null, saveAuto:'20만/30만',
-   targets:['porter-partner','porter-charge-40'],
-   notes:'※ 상생파트너: 1차산업종사자(농축수임광업) 또는 영업용 운전자 限\n※ 증빙서류 필수 (농업경영체등록확인서 / 화물운송종사자격증 등)\n※ 상생파트너 40만 충전비 지원 신규/강화'},
+  {id:'porter-lp', name:'포터 LPDi', hl:'상생파트너 50만 + 충전비 20만 / 노후차 20만',
+   change:{type:'new',txt:'LPG 협회 연계 노후차 특별타겟 20만 신규 · 상생파트너 50만+충전비 20만'},
+   summerFesta:{'일반':{}},
+   tradeIn:{corp:'100만',other:'100만'},
+   finance:'36M 5.4% / 48M 5.5% / 60M 5.6%',
+   exhibitCar:'20만', saveAuto:'20만/30만',
+   targets:['porter-partner-lp','lpg-oldcar-20','before-service-20','corp-fleet-mgmt','goodfriend-200'],
+   notes:'※ 상생파트너: 1차산업종사자(농축수임광업) 또는 영업용 운전자 限 (포터 LPDi 50만 + SK가스 충전비 20만 = 총 70만)\n※ 증빙서류 필수 (농업경영체등록확인서 / 화물운송종사자격증 등)\n※ LPG 협회 연계 노후차 20만: 차령 7년 이상 소상트럭 보유 고객 (상생파트너·트레이드인과 중복 가능)'},
 
-  {id:'pavise', name:'파비스', hl:'노후차/원콜 타겟 / 납기 카고 4개월·샤시캡 3.5개월',
+  {id:'pavise', name:'파비스', hl:'노후차/원콜 타겟 / 납기 카고 3.5개월·샤시캡 3개월',
    summerFesta:{'일반':{}},
    tradeIn:null,
    finance:'36M 6.5% / 48M 6.6% / 60M 6.7% (선수금 10% 이상)',
@@ -826,24 +844,24 @@ truck:[
    targets:['wonkol-100','oldcar-50'],
    notes:'※ 대상: 2027 더 뉴 파비스 限'},
 
-  {id:'mighty', name:'마이티', hl:'5월이전 100만 + 대량수요 묶기 최대 100만',
-   summerFesta:{'일반':{'5월이전':'100만','6월':'100만'}},
+  {id:'mighty', name:'마이티', hl:'6월이전 200만 / 7~8월 100만 + 대량수요 묶기 최대 100만',
+   summerFesta:{'일반':{'6월이전':'200만 (KSF)','7월':'100만 (KSF)','8월':'100만 (KSF)'}},
    tradeIn:null,
    finance:'36M 2.7% / 48M 2.8% / 60M 2.9% (마이티 전용 저금리)',
    exhibitCar:null, saveAuto:'50만',
    bm:['30만'],
    targets:['wonkol-100','oldcar-50','startup-50','mighty-loan','mighty-bulk'],
-   notes:'※ 원콜/노후차/창업지원 타겟 중복 적용 불가\n※ 대량수요 묶기조건: 2~4대 50만 / 5대이상 100만 (신규)\n※ 대상: 2027 더 뉴 마이티 限'},
+   notes:'※ 원콜/노후차/창업지원 타겟 중복 적용 불가\n※ 대량수요 묶기조건: 2~4대 50만 / 5대이상 100만\n※ 대상: 2027 더 뉴 마이티 限'},
 
-  {id:'solati', name:'쏠라티', hl:'3월이전 100만 / 납기 즉시',
-   summerFesta:{'일반':{'5월이전':'100만 (3월이전 限)'}},
+  {id:'solati', name:'쏠라티', hl:'9월 100만 / 납기 즉시',
+   summerFesta:{'일반':{'9월':'100만 (KSF)'}},
    tradeIn:null,
    finance:'36M 5.7% / 48M 5.8% / 60M 5.9%',
    exhibitCar:null, saveAuto:'50만',
    bm:['50만'],
    targets:['rentcar-solati']},
 
-  {id:'county', name:'카운티', hl:'디젤 24개월이상 / EV 7개월이상',
+  {id:'county', name:'카운티', hl:'디젤 24개월이상 / EV 5개월이상',
    summerFesta:{'일반':{}},
    tradeIn:null,
    finance:'36M 5.7% / 48M 5.8% / 60M 5.9%',
@@ -856,37 +874,39 @@ taxi:[
    taxiConds:{'재구매 2회차':'30만','재구매 3회차 이상':'50만','증차 기본조건':'60만 (지방자치단체 본인가 공문 필요)'},
    saveAuto:'30만', targets:[]},
   {id:'grandeur-tx', name:'그랜저 영업용', sub:'신형 포함', hl:'5월이전 300만',
+   months:['5월이전','6월','7월','8월','9월'],
    summerFesta:{'일반':{'5월이전':'300만'}},
    saveAuto:'자가용과 동일 조건',
    taxiConds:{'재구매 2회차':'30만','재구매 3회차 이상':'50만','증차 기본조건':'60만 (지방자치단체 본인가 공문 필요)'},
    targets:[]},
-  {id:'ioniq5-tx', name:'아이오닉 5 영업용', hl:'생산월 최대 100만 + 친환경택시 50만',
+  {id:'ioniq5-tx', name:'아이오닉 5 영업용', hl:'생산월 최대 100만 (5~7월)',
+   months:['5월이전','6월','7월','8월','9월'],
    summerFesta:{'일반':{'5월이전':'100만','6월':'100만','7월':'100만'}},
    evBenefit:'【기본】에브리케어 20만 충전크레딧\n【더블UP】현대캐피탈 할부 이용 시 추가 20만 (XB,JC 제외)',
    financePromo:'EV 택시 동반자 플랜\n모빌리티(JM-개인택시) 36M 2.7% / 48M 2.8% / 60M 2.9%\n일반(JB-개인·법인택시) 36M 3.5% / 48M 3.6% / 60M 3.7%',
-   taxiConds:{'친환경차 택시 타겟':'26년 10월 친환경 개인택시 출고 고객 50만','재구매 2회차':'30만','재구매 3회차 이상':'50만','증차 기본조건':'60만 (지방자치단체 본인가 공문 필요)'},
+   taxiConds:{'재구매 2회차':'30만','재구매 3회차 이상':'50만','증차 기본조건':'60만 (지방자치단체 본인가 공문 필요)'},
    targets:[],
    notes:'※ 아이오닉5 N 라인 택시 출고 가능 (상기 外 사양/제네시스 불가)'},
-  {id:'ioniq6-tx', name:'아이오닉 6 영업용', hl:'생산월 최대 100만 + 친환경택시 50만',
+  {id:'ioniq6-tx', name:'아이오닉 6 영업용', hl:'생산월 최대 100만 (5~7월)',
+   months:['5월이전','6월','7월','8월','9월'],
    summerFesta:{'일반':{'5월이전':'100만','6월':'100만','7월':'100만'}},
    evBenefit:'【기본】에브리케어 20만 충전크레딧\n【더블UP】현대캐피탈 할부 이용 시 추가 20만 (XB,JC 제외)',
    financePromo:'EV 택시 동반자 플랜\n모빌리티(JM-개인택시) 36M 2.7% / 48M 2.8% / 60M 2.9%\n일반(JB-개인·법인택시) 36M 3.5% / 48M 3.6% / 60M 3.7%',
-   taxiConds:{'친환경차 택시 타겟':'26년 10월 친환경 개인택시 출고 고객 50만','재구매 2회차':'30만','재구매 3회차 이상':'50만','증차 기본조건':'60만 (지방자치단체 본인가 공문 필요)'},
+   taxiConds:{'재구매 2회차':'30만','재구매 3회차 이상':'50만','증차 기본조건':'60만 (지방자치단체 본인가 공문 필요)'},
    targets:[],
    notes:'※ 아이오닉6 N 라인 택시 출고 가능 (상기 外 사양/제네시스 불가)'},
-  {id:'kona-ev-tx', name:'코나 일렉트릭 영업용', hl:'생산월 최대 100만 + 친환경택시 50만',
-   change:{type:'new',txt:'코나 일렉트릭 영업용 생산월 조건 신규 적용'},
+  {id:'kona-ev-tx', name:'코나 일렉트릭 영업용', hl:'생산월 최대 100만 (5~7월)',
+   months:['5월이전','6월','7월','8월','9월'],
    summerFesta:{'일반':{'5월이전':'100만','6월':'100만','7월':'100만'}},
    evBenefit:'【기본】에브리케어 20만 충전크레딧\n【더블UP】현대캐피탈 할부 이용 시 추가 20만 (XB,JC 제외)',
    financePromo:'EV 택시 동반자 플랜\n모빌리티(JM-개인택시) 36M 2.7% / 48M 2.8% / 60M 2.9%\n일반(JB-개인·법인택시) 36M 3.5% / 48M 3.6% / 60M 3.7%',
-   taxiConds:{'친환경차 택시 타겟':'26년 10월 친환경 개인택시 출고 고객 50만','재구매 2회차':'30만','재구매 3회차 이상':'50만','증차 기본조건':'60만 (지방자치단체 본인가 공문 필요)'},
+   taxiConds:{'재구매 2회차':'30만','재구매 3회차 이상':'50만','증차 기본조건':'60만 (지방자치단체 본인가 공문 필요)'},
    targets:[]},
   {id:'staria-ev-tx', name:'스타리아 EV 영업용', hl:null,
    evBenefit:'20만 충전크레딧 또는 홈충전기',
    taxiConds:{'재구매 2회차':'30만','재구매 3회차 이상':'50만','증차 기본조건':'60만 (지방자치단체 본인가 공문 필요)'},
    targets:[]},
   {id:'staria-mob-tx', name:'스타리아 모빌리티 영업용', hl:null,
-   change:{type:'new',txt:'스타리아 모빌리티 영업용 항목 신규 추가'},
    taxiConds:{'재구매 2회차':'30만','재구매 3회차 이상':'50만','증차 기본조건':'60만 (지방자치단체 본인가 공문 필요)'},
    targets:[]},
 ]
@@ -1272,7 +1292,7 @@ const PRICE_DATA = {
   }
 };
 
-/* ===== 현대자동차 전용카드 혜택 (2026년 10월) ===== */
+/* ===== 현대자동차 전용카드 혜택 (2026년 11월) ===== */
 const CARD_DATA = {
   cards: [
     {name:'현대 모빌리티 카드 Basic', short:'Basic'},
@@ -1466,88 +1486,86 @@ const PAYMENT_DATA = {
 
 };
 
-/* ===== 납기 데이터 (2026년 10월 기준) ===== */
-// d: 납기 등급 (instant=즉시, 1m=1개월, 1hm=1.5개월, 2m=2개월, 3m=3개월, 4m=4개월, 6m=6개월, none=생산없음/단산)
+/* ===== 납기 데이터 (2026년 11월 기준) ===== */
+// d: 납기 등급 (instant=즉시, 3w=3주, 1m=1개월, 1hm=1.5개월, 2m=2개월, 3m=3개월, 3hm=3.5개월, 4m=4개월, 6m=6개월, lot=로트생산, none=생산없음/단산)
 // stock: 발급가능재고 대수 (있으면 즉시 출고 가능)
 // note: 특이사항
 const DELIVERY = {
 'avante-fn':[
-  {type:'CN7 HEV (N라인 포함)', d:'none', delivery:'요청일 무관 출고', note:'아반떼 CN7 HEV 10월까지 추가 생산 예정 — 요청일 무관 생산계획 조회 시 출고 가능 (ICE 추가 생산계획 없음)', stock:null},
-  {type:'CN7 N', d:'1m', delivery:'약 1개월', note:null, stock:null},
-  {type:'CN8 가솔린 (장애사양 포함)', d:'2m', delivery:'약 2개월', note:null, stock:null},
-  {type:'CN8 HEV', d:'none', delivery:'납기 추후 공지', note:'아반떼 CN8 HEV 납기 추후 공지 예정', stock:null},
+  {type:'CN7 N', d:'1hm', delivery:'약 1.5개월', note:null, stock:null},
+  {type:'CN8 가솔린 (장애사양 포함)', d:'1hm', delivery:'약 1.5개월', note:null, stock:null},
+  {type:'CN8 HEV', d:'2m', delivery:'약 2개월', note:null, stock:null},
 ],
 'sonata':[
-  {type:'가솔린/LPi', d:'1m', delivery:'약 1개월', note:'10월 초 27MY 런칭 예정 / 파노라마 선루프 선택 시 1개월 추가 소요', stock:null},
-  {type:'N라인', d:'1m', delivery:'약 1개월', note:'10월 초 27MY 런칭 예정 / 파노라마 선루프 선택 시 1개월 추가 소요', stock:null},
-  {type:'HEV', d:'1m', delivery:'약 1개월', note:'10월 초 27MY 런칭 예정 / 파노라마 선루프 선택 시 1개월 추가 소요', stock:null},
+  {type:'가솔린/LPi (N라인 포함)', d:'1m', delivery:'약 1개월', note:null, stock:null},
+  {type:'HEV', d:'1m', delivery:'약 1개월', note:null, stock:null},
 ],
 'grandeur-old':[
-  {type:'가솔린/LPi', d:'instant', delivery:'즉시', note:'가솔린 재고 없는 사양 신규 생산 시 1개월 소요 / LPi 장애 사양 선택 시 1개월 추가 소요 / 파노라마·스마트비전루프 1개월 추가', stock:null},
-  {type:'HEV', d:'1m', delivery:'약 1개월', note:'파노라마·스마트비전루프 1개월 추가 / 캘리그래피+피렐리 1개월 추가 / 우드내장 추가 시 2개월 추가', stock:null},
+  {type:'가솔린/LPi', d:'instant', delivery:'즉시', note:'LPi 장애사양(왼손왼발/왼손오른발/양발장애) 선택 시 1개월 추가 소요', stock:null},
+  {type:'HEV', d:'instant', delivery:'즉시', note:null, stock:null},
 ],
 'grandeur-new':[
-  {type:'가솔린/LPi', d:'instant', delivery:'즉시', note:'가솔린 재고 없는 사양 신규 생산 시 1개월 소요 / LPi 장애 사양 선택 시 1개월 추가 소요 / 파노라마·스마트비전루프 1개월 추가', stock:null},
-  {type:'HEV', d:'1m', delivery:'약 1개월', note:'파노라마·스마트비전루프 1개월 추가 / 캘리그래피+피렐리 1개월 추가 / 우드내장 추가 시 2개월 추가', stock:null},
+  {type:'가솔린/LPi', d:'instant', delivery:'즉시', note:'LPi 장애사양(왼손왼발/왼손오른발/양발장애) 선택 시 1개월 추가 소요', stock:null},
+  {type:'HEV', d:'instant', delivery:'즉시', note:null, stock:null},
 ],
 'venue':[
   {type:'전차종', d:'6m', delivery:'약 6개월', note:null, stock:null},
 ],
 'kona':[
-  {type:'가솔린 (N라인 포함)', d:'3m', delivery:'약 3개월', note:null, stock:null},
-  {type:'HEV', d:'2m', delivery:'약 2개월', note:null, stock:null},
+  {type:'가솔린 (N라인 포함)', d:'2m', delivery:'약 2개월', note:null, stock:null},
+  {type:'HEV', d:'1m', delivery:'약 1개월', note:null, stock:null},
 ],
 'kona-ev':[
-  {type:'EV (영업용 포함)', d:'1m', delivery:'약 1개월', note:'로트 생산 방식 — 정해진 기간에만 생산 가능. 당월 불가 시 익월 생산일정에 따라 최대 1.5개월', stock:null},
+  {type:'EV (영업용 포함)', d:'lot', delivery:'발급가능재고 즉시 출고 가능', note:'로트 생산 방식 — 11/2(월) 요청분까지 11월 생산 대응 가능, 12월 생산 없음 / 생산 일정 11/5(목)~11/16(월)', stock:'코나 EV 660대'},
 ],
 'tucson':[
-  {type:'가솔린 · HEV (N라인 포함)', d:'none', delivery:'추가 생산계획 없음', note:'투싼 현 모델(NX4) 추가 생산계획 없음 / 신형 투싼(NX5) 전환 시 원요청일 보전 컨버전 미진행', stock:null},
+  {type:'가솔린 · HEV (N라인 포함)', d:'4m', delivery:'약 4개월', note:'디 올 뉴 투싼(NX5) 기준', stock:null},
 ],
 'santafe':[
-  {type:'가솔린', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'싼타페 ICE 1,000대'},
-  {type:'HEV', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'싼타페 HEV 2,300대'},
+  {type:'가솔린', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'싼타페 가솔린 1,300대'},
+  {type:'HEV', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'싼타페 HEV 3,900대'},
 ],
 'palisade':[
-  {type:'가솔린', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능 / 하이루프 특장 작업 +3주 추가 소요 (하이루프 출고 개시 11월 초 예상)', stock:'팰리세이드 2,500대'},
-  {type:'HEV', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능 / 하이루프 특장 작업 +3주 추가 소요 (하이루프 출고 개시 11월 초 예상)', stock:'팰리세이드 2,500대'},
+  {type:'가솔린', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능 / 하이루프 특장 작업 +3주 추가 소요 (하이루프 출고 개시 11월 초 예상)', stock:'팰리세이드 4,500대'},
+  {type:'HEV', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능 / 하이루프 특장 작업 +3주 추가 소요 (하이루프 출고 개시 11월 초 예상)', stock:'팰리세이드 4,500대'},
 ],
 'staria':[
   {type:'LPi', d:'3w', delivery:'약 3주', note:null, stock:null},
   {type:'HEV', d:'3w', delivery:'약 3주', note:null, stock:null},
 ],
 'staria-ev':[
-  {type:'승용/화물 (3·5·6·7인승)', d:'2m', delivery:'2~3개월', note:null, stock:null},
-  {type:'승합 (11인승)', d:'4m', delivery:'4~5개월', note:null, stock:null},
+  {type:'승용/화물 (3·5·6·7인승)', d:'2m', delivery:'1~2개월', note:null, stock:null},
+  {type:'승합 (11인승)', d:'4m', delivery:'3~4개월', note:null, stock:null},
 ],
 'nexo':[
-  {type:'FCEV', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'넥쏘 550대'},
+  {type:'FCEV', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'넥쏘 780대'},
 ],
 'ioniq5':[
-  {type:'EV (영업용 포함)', d:'1m', delivery:'약 1개월', note:null, stock:null},
-  {type:'N', d:'1m', delivery:'약 1개월', note:'로트 생산 방식 — 정해진 기간에만 생산 가능. 당월 불가 시 익월 생산일정에 따라 최대 1.5개월', stock:null},
+  {type:'EV (영업용 포함)', d:'instant', delivery:'즉시', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'아이오닉 5 1,950대'},
+  {type:'N', d:'lot', delivery:'11월 4주차 생산 예정', note:'로트 생산 방식 — 정해진 기간에만 생산 가능', stock:null},
 ],
 'ioniq6':[
-  {type:'EV (N 포함)', d:'1m', delivery:'약 1개월', note:'발급가능재고 활용 시 즉시 출고 가능 / 파노라마 선루프 선택 시 1개월 추가 소요', stock:'아이오닉6 500대'},
+  {type:'EV (N 포함)', d:'instant', delivery:'즉시', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'아이오닉 6 800대'},
 ],
 'ioniq9':[
-  {type:'EV', d:'1hm', delivery:'약 1.5개월', note:'파노라마 선루프 선택 시 1개월 추가 소요', stock:null},
+  {type:'EV', d:'1m', delivery:'약 1개월', note:null, stock:null},
 ],
 'porter-ev':[
-  {type:'EV', d:'instant', delivery:'즉시 (재고)', note:'발급가능재고 활용 시 즉시 출고 가능 / 특장 차량은 특장 납기 추가', stock:'포터 EV 1,500대'},
+  {type:'EV', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능 / 특장 차량은 특장 납기 추가', stock:'포터 EV 500대'},
 ],
 'st1':[
-  {type:'ST1', d:'1hm', delivery:'약 1.5개월', note:'27MY 런칭 완료 — 26MY 발급가능재고 적극 판촉 요망. 신규 생산 시 최소 1.5개월 이상 소요', stock:null},
+  {type:'ST1', d:'1hm', delivery:'약 1.5개월', note:'26MY 발급가능재고 적극 판촉 요망. 신규 생산 시 최소 1.5개월 이상 소요', stock:null},
 ],
 'porter-lp':[
-  {type:'일반/슈퍼캡 A/T', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능 / 특장 차량은 특장 납기 추가', stock:'포터 LPDi 3,800대'},
+  {type:'일반/슈퍼캡 A/T', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능 / 특장 차량은 특장 납기 추가', stock:'포터 LPDi 1,900대'},
   {type:'일반/슈퍼캡 M/T', d:'1m', delivery:'약 1개월', note:'수동(M/T) 생산투입은 차종담당자 별도 문의', stock:null},
   {type:'더블캡 A/T', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능 / 특장 차량은 특장 납기 추가', stock:null},
   {type:'더블캡 M/T', d:'1m', delivery:'약 1개월', note:'수동(M/T) 생산투입은 차종담당자 별도 문의', stock:null},
-  {type:'EV', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'포터 EV 1,500대'},
 ],
 'pavise':[
-  {type:'카고', d:'4m', delivery:'약 4개월', note:'특별주문/주문사양 추가 기간 소요 → 양산사양 우선 안내 요망', stock:null},
-  {type:'샤시캡', d:'3hm', delivery:'약 3.5개월', note:null, stock:null},
+  {type:'카고', d:'3hm', delivery:'약 3.5개월', note:'특별주문/주문사양 추가 기간 소요 → 양산사양 우선 안내 요망', stock:null},
+  {type:'샤시캡', d:'3m', delivery:'약 3개월', note:null, stock:null},
+  {type:'OEM특장', d:'3hm', delivery:'샤시캡 약 3.5개월 + 특장 별도', note:'특장 납기 별도 확인 (담당: 국내SV&PBV사업팀)', stock:null},
 ],
 'mighty':[
   {type:'카고', d:'2m', delivery:'약 2개월', note:'특별주문/주문사양 추가 기간 소요 → 양산사양 우선 안내 요망 / 발급가능재고 적극 활용 (즉시 출고 가능)', stock:null},
@@ -1562,55 +1580,78 @@ const DELIVERY = {
   {type:'EV (전기버스)', d:'none', delivery:'5개월 이상', note:'주문제작 의뢰 후 담당자 납기 별도 확인 必', stock:null},
 ],
 'g70':[
-  {type:'G70 (S/B 포함)', d:'3w', delivery:'약 3주', note:null, stock:null},
+  {type:'G70 세단', d:'3w', delivery:'약 3주', note:null, stock:null},
+  {type:'G70 S/B', d:'1m', delivery:'약 1개월', note:null, stock:null},
 ],
 'g80':[
-  {type:'가솔린', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'G80 2,500대'},
+  {type:'가솔린', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'G80 가솔린 2,400대'},
 ],
 'g80ev':[
   {type:'G80 EV', d:'3w', delivery:'약 3주', note:null, stock:null},
 ],
 'g90':[
-  {type:'G90 (LWB 포함)', d:'1m', delivery:'약 1개월', note:'발급가능재고 활용 시 즉시 출고 가능 / LWB·BLACK 1주 추가', stock:'G90 500대'},
+  {type:'G90 (LWB 포함)', d:'1m', delivery:'약 1개월', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'G90 450대'},
 ],
 'gv60':[
   {type:'일반', d:'1m', delivery:'약 1개월', note:null, stock:null},
-  {type:'마그마', d:'2m', delivery:'약 2개월', note:'일반 대비 도장 2주(유광컬러 限) + 검사 3주 추가', stock:null},
+  {type:'마그마', d:'2m', delivery:'약 2개월', note:'일반 대비 도장 2주(외장칼라 마그마 오렌지 限) + 검사 3주 추가', stock:null},
 ],
 'gv70':[
-  {type:'가솔린', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능 / 2WD·스포츠(그래파이트 포함)·외장 매트 컬러 선택 시 0.5개월 추가', stock:'GV70 1,500대'},
+  {type:'가솔린', d:'3w', delivery:'약 3주', note:'발급가능재고 활용 시 즉시 출고 가능 / 2WD·스포츠(그래파이트 포함)·외장 매트 컬러 선택 시 0.5개월 추가', stock:'GV70 1,600대'},
 ],
 'gv70ev':[
   {type:'GV70 EV', d:'1m', delivery:'약 1개월', note:null, stock:null},
 ],
 'gv80':[
-  {type:'GV80 (쿠페 포함)', d:'3w', delivery:'약 3주', note:'10월 초 27MY 런칭 예정', stock:null},
+  {type:'가솔린 (쿠페 포함)', d:'3w', delivery:'약 3주', note:'BTO 사양 최대 1~2주 추가 소요', stock:null},
+  {type:'HEV', d:'3m', delivery:'약 3개월', note:'2WD 사양 선택 시 2주 추가 소요 / BTO 사양 최대 1~2주 추가 소요', stock:null},
 ],
 'sonata-tx':[
   {type:'쏘나타 택시 (DT23)', d:'1m', delivery:'약 1개월', note:'선적/탁송 상황에 따라 납기 변동 가능', stock:null},
 ],
 'grandeur-tx':[
-  {type:'그랜저 영업용', d:'instant', delivery:'즉시', note:'가솔린 재고 없는 사양 신규 생산 시 1개월 소요', stock:null},
+  {type:'그랜저 영업용', d:'instant', delivery:'즉시', note:'LPi 장애사양 선택 시 1개월 추가 소요', stock:null},
 ],
 'ioniq5-tx':[
-  {type:'아이오닉 5 영업용', d:'1m', delivery:'약 1개월', note:null, stock:null},
+  {type:'아이오닉 5 영업용', d:'instant', delivery:'즉시', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'아이오닉 5 1,950대'},
 ],
 'ioniq6-tx':[
-  {type:'아이오닉 6 영업용', d:'1m', delivery:'약 1개월', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'아이오닉6 500대'},
+  {type:'아이오닉 6 영업용', d:'instant', delivery:'즉시', note:'발급가능재고 활용 시 즉시 출고 가능', stock:'아이오닉 6 800대'},
 ],
 }
 
 const TARGETS = {
-  'family-love': {
-    name:'추석 가족사랑 조건', badge:'신규', period:'2026.09.01~10.31',
-    desc:'추석 연휴 기념 가족사랑 특별 지원금',
+  'ksf': {
+    name:'K-세일페스타 특별조건', badge:'신규', period:'2026.11~12월',
+    desc:'K-세일페스타 기간 공통타겟 (인기사양 무상장착 / 특별조건)',
     rows:[
-      {label:'지원금액', val:'100만원'},
-      {label:'대상차종', val:'그랜저(신형 HEV 추가), 싼타페, 팰리세이드, 스타리아(EV제외), 아이오닉5/6/9, 코나 일렉트릭'},
-      {label:'대상', val:'현대차 임직원 및 4촌 이내 친인척 / 판매대리점·블루핸즈 대표·등록인원 및 4촌 이내 친인척 / 계열사·관계사·협력사 임직원 및 4촌 이내 친인척'},
-      {label:'기간', val:'2026.09.01 ~ 2026.10.31'},
+      {label:'아반떼 (CN8, HEV 포함)', val:'인기사양 무상장착 100만원 상당'},
+      {label:'더 뉴 그랜저 (HEV 포함)', val:'인기사양 무상장착 140만원 상당'},
+      {label:'싼타페 (HEV 포함)', val:'100만원 또는 60M 무이자 (2,000대 한정)'},
+      {label:'GV70, G80', val:'200만원 (스페셜 오퍼)'},
+      {label:'대상', val:'개인(AA1), 개인사업자(BA1) 限'},
     ],
-    note:'※ 10/1부 변동사항\n① 임직원/대리점인원/대표(배우자) 본인 출고: 직원할인 미적용 시 가족사랑 적용 가능\n② 계열사/관계사/블루핸즈/협력사 임직원 본인 출고: 직원할인·재구입연한 무관 적용 가능'
+    note:'※ 아반떼: 모던 - 슬림 디스플레이 35만 + 컨비니언스(일반 65만 / HEV 45만) (두 사양 선택 시 최대 100만(일반)·80만(HEV), 1개만 선택 시 해당 옵션 금액만큼) / 프리미엄 - 플래티넘Ⅰ 93만 / 인스퍼레이션 - 플래티넘Ⅱ 90만\n※ 그랜저: 프리미엄 - 현대 스마트센스Ⅰ 140만 / 익스클루시브 - 스마트센스Ⅱ 140만 / 캘리그래피 - 100만 할인\n※ 무상장착 사양 미선택 시 타겟조건 적용 불가 · 제 3자 공동명의 적용 가능\n※ 싼타페 무이자: 타겟 202611A21 적용 → 판매유형코드 JM (무이자 타겟과 KSF 100만 타겟 중복 불가)'
+  },
+  'surprise-10': {
+    name:'11월 서프라이즈 타겟', badge:'신규', period:'2026.11.02~11.30',
+    desc:'서프라이즈 타겟 문자 수신 고객 10만원 D/C',
+    rows:[
+      {label:'지원금액', val:'10만원 D/C'},
+      {label:'대상', val:'11월 서프라이즈 타겟 문자 수신 고객 (개인 AA1, 개인사업자 BA1 限)'},
+      {label:'대상차종', val:'승용/RV/소형상용 (제외: 디 올 뉴 투싼, GV90, 캐스퍼, 상용, 영업용)'},
+    ],
+    note:''
+  },
+  'card-promo-50': {
+    name:'쏘나타·스타리아 전용카드 프로모션', badge:null, period:'상시 (중복 가능, 최대 3개)',
+    desc:'현대차/제네시스 전용카드 결제 + 세이브오토 이용 시 총 50만원',
+    rows:[
+      {label:'지원금액', val:'50만원 (25만 차량가 DC + 25만 캐시백)'},
+      {label:'대상차종', val:'쏘나타, 스타리아 (HEV 포함, EV 제외)'},
+      {label:'조건', val:'전용카드 1,000만원 이상 결제 + 세이브오토 이용 (AA1, BA1)'},
+    ],
+    note:'※ 출고 전 타겟코드 입력 必 / 블루멤버스 전용카드 및 3-BODY 카드 결제 시 적용 불가'
   },
   'driving-plcc': {
     name:'운전결심 X PLCC카드 20만원', badge:null, period:'상시',
@@ -1628,15 +1669,15 @@ const TARGETS = {
     rows:[
       {label:'일반 (현대/제네시스 매각)', val:'50만원'},
       {label:'일반 (타브랜드 매각)', val:'30만원'},
-      {label:'하이브리드 강화 (10월 한정)', val:'100만원 (현대/제네시스) / 50만원 (타브랜드) — 그랜저·싼타페·팰리세이드·스타리아 HEV'},
+      {label:'하이브리드 (11월 연장)', val:'100만원 (현대/제네시스) / 50만원 (타브랜드) — 그랜저·싼타페·팰리세이드·스타리아 HEV'},
       {label:'EV 트레이드인', val:'100만원 (현대/제네시스) / 50만원 (타브랜드) — 캐스퍼EV·스타리아EV 제외'},
       {label:'1톤 화물 (포터·ST1)', val:'100만원'},
-      {label:'제네시스 / 넥쏘', val:'200만원 (현대/제네시스 매각) / 100만원 (타브랜드)'},
+      {label:'제네시스 / 넥쏘 (GV80 HEV 제외)', val:'200만원 (현대/제네시스 매각) / 100만원 (타브랜드)'},
     ],
-    note:'※ 전자서명 완료일(D) 기준 D+15일 이내 신차 출고 (중고차 先탁송 시 D+30일)\n※ 보유차량 10년/15만km 이내 限 (캐스퍼, 아반떼 신형 제외)\n※ 5월부 당사·타사 차량→넥쏘 트레이드인 가능'
+    note:'※ 전자서명 완료일(D) 기준 D+15일 이내 신차 출고 (중고차 先탁송 시 D+30일)\n※ 보유차량 10년/15만km 이내 限\n※ 캐스퍼, 디 올 뉴 투싼(NX5), GV80 HEV, 스타리아 EV 구입 시 적용 불가\n※ 11월부 디 올 뉴 아반떼 가솔린/HEV 트레이드인 적용 가능 (당사 50만 / 타사 30만)\n※ 5월부 당사·타사 차량→넥쏘 트레이드인 가능'
   },
   'oldcar-tradein': {
-    name:'노후차 트레이드인', badge:'신규', period:'상시',
+    name:'노후차 트레이드인', badge:null, period:'상시',
     desc:'노후 보유차량(10~15년) 매각 후 신차 구매 지원금',
     rows:[
       {label:'기본', val:'20만원'},
@@ -1647,7 +1688,7 @@ const TARGETS = {
     note:'※ 1톤 디젤트럭(포터Ⅱ·봉고Ⅲ)은 15년/25만km 초과 차량도 매각 가능\n※ 기타 유의사항 트레이드인 특별조건과 동일'
   },
   'tradein-card-genesis': {
-    name:'트레이드인 전용카드 조건 (제네시스)', badge:'신규', period:'상시',
+    name:'트레이드인 전용카드 조건 (제네시스)', badge:null, period:'상시',
     desc:'트레이드인 고객 제네시스/현대 전용카드 결제 시 추가 혜택',
     rows:[
       {label:'지원금액', val:'50만원 (25만 할인 + 25만 캐시백)'},
@@ -1674,7 +1715,7 @@ const TARGETS = {
     note:''
   },
   'corp-fleet-mgmt': {
-    name:'현장관리법인', badge:'신규', period:'상시',
+    name:'현장관리법인', badge:null, period:'상시',
     desc:'법인업무용 직구매 출고 이력 보유 법인/대표자/키맨 지원금',
     rows:[
       {label:'법인', val:'현대 20만 / 제네시스 50만'},
@@ -1682,10 +1723,10 @@ const TARGETS = {
       {label:'키맨', val:'현대 30만 / 제네시스 50만'},
       {label:'대상', val:'법인업무용(CA1, 현대닷컴 가입 법인 中 직구매 출고 이력), 대표자(AA1), 키맨(AA1)'},
     ],
-    note:''
+    note:'※ 대상차종: 국내승용 전차종 (아반떼 CN8, 투싼 NX5 제외)'
   },
   'goodfriend-200': {
-    name:'200만 굿프렌드', badge:'신규', period:'상시',
+    name:'200만 굿프렌드', badge:null, period:'상시',
     desc:'굿프렌드 구축 고객 전담 상담 후 계약 지원금',
     rows:[
       {label:'기출고 고객', val:'10만원'},
@@ -1694,60 +1735,62 @@ const TARGETS = {
     note:'※ 200만 굿프렌드 구축고객 中 전담 고객 구축 후 1개월 이후 계약 고객\n※ M월 D일 선정 시 M+1월 D일부 타겟 적용 가능'
   },
   'porter-partner': {
-    name:'상생파트너 특별타겟', badge:'강화', period:'상시',
+    name:'상생파트너 특별타겟', badge:null, period:'상시',
     desc:'1차산업종사자 또는 영업용 운전자 특별 지원금',
     rows:[
       {label:'지원금액', val:'현대 30만원 / 제네시스 50만원'},
+      {label:'포터 LPDi', val:'50만원 + 충전비 20만원 (총 70만원)'},
       {label:'대상차종', val:'포터LPDi, 그랜저, 싼타페, 팰리세이드, 스타리아, 제네시스(GV80 HEV 제외)'},
       {label:'대상', val:'① 1차산업종사자(농·축·수·임·광업) 또는 ② 영업용 운전자 (AA1,BA1)'},
     ],
     note:'※ 중복 가능 (최대 3개 적용)\n※ 증빙서류 필수 (농업경영체등록확인서 / 화물운송종사자격증 등)'
   },
-  'porter-charge-40': {
-    name:'포터 상생파트너 충전비 지원', badge:'신규', period:'상시',
-    desc:'포터 LPDi 상생파트너 대상 충전비 지원',
+  'porter-partner-lp': {
+    name:'상생파트너 특별타겟 (포터 LPDi 충전비 지원)', badge:null, period:'상시',
+    desc:'포터 LPDi 1차산업종사자·영업용 운전자 지원금',
     rows:[
-      {label:'지원금액', val:'40만원 충전비 지원 (20만 할인 + SK가스 20만 충전비)'},
+      {label:'지원금액', val:'50만원 + 충전비 20만원 (총 70만원)'},
       {label:'대상차종', val:'포터 LPDi'},
+      {label:'대상', val:'① 1차산업종사자(농·축·수·임·광업) 또는 ② 영업용 운전자 (AA1,BA1)'},
     ],
-    note:''
+    note:'※ 50만 할인 + SK가스 충전비 20만 / 증빙서류 필수 (농업경영체등록확인서 / 화물운송종사자격증 등)\n※ LPG 협회 연계 노후차 특별타겟·트레이드-인과 중복 가능 (최대 3개 적용)'
+  },
+  'lpg-oldcar-20': {
+    name:'LPG 협회 연계 노후차 특별타겟', badge:'신규', period:'상시',
+    desc:'차령 7년 이상 소상트럭 보유 고객 포터 LPDi 구매 지원금',
+    rows:[
+      {label:'지원금액', val:'20만원'},
+      {label:'대상차종', val:'포터 LPDi'},
+      {label:'대상', val:'차령 7년 이상 소상트럭 보유 고객 (AA1, BA1, CA1)'},
+    ],
+    note:'※ 상생파트너, 트레이드-인 타겟조건과 중복 적용 가능\n※ 포터 LPDi: 소상트럭 보유 고객 (픽업트럭 포함 / 라보·다마스·스타리아·스타렉스 제외)'
   },
   'kingdom-defender': {
-    name:'2026 국민지킴이', badge:'신규', period:'~2026.11.30 출고분',
+    name:'2026 국민지킴이', badge:null, period:'~2026.11.30 출고분',
     desc:'공직 종사자 대상 특별 지원금',
     rows:[
       {label:'지원금액', val:'일반 30만원 / 하이브리드 50만원'},
-      {label:'대상차종', val:'그랜저, 싼타페, 팰리세이드, 스타리아'},
-      {label:'대상', val:'군인·군무원 / 경찰공무원 / 소방공무원 / 교정직공무원'},
+      {label:'대상차종', val:'그랜저, 싼타페, 팰리세이드, 스타리아 (EV 제외)'},
+      {label:'대상', val:'군인·군무원 / 경찰공무원 / 소방공무원 / 교정직공무원 (AA1,BA1)'},
     ],
     note:'※ 2026.11.30 이내 출고 시 적용'
   },
   'gv80-hev-early': {
-    name:'GV80 하이브리드 조기계약 프로모션', badge:'신규', period:'2026.10.16까지 계약',
+    name:'GV80 하이브리드 조기계약 프로모션', badge:null, period:'2026.10.16까지 계약',
     desc:'GV80 하이브리드 조기 계약 고객 지원금',
     rows:[
       {label:'지원금액', val:'계약금 50만원'},
       {label:'대상차종', val:'GV80 HEV'},
       {label:'기간', val:'10월 16일 이내 계약, 12월 31일 이내 출고'},
     ],
-    note:'※ 판매개시 일정 추후 안내'
-  },
-  'ev-to-ice': {
-    name:'EV to 내연 전환 출고 혜택', badge:'강화', period:'10월 내 출고',
-    desc:'EV 계약 고객의 내연기관(하이브리드 포함) 전환 출고 지원금',
-    rows:[
-      {label:'지원금액', val:'현대 200만원 / 제네시스 300만원 (10월 강화)'},
-      {label:'대상차종', val:'국내승용 내연기관(하이브리드 포함) 전차종'},
-      {label:'대상', val:'26년 1~9월 EV 차종 계약 후 미출고 고객 (AA1,BA1)'},
-    ],
-    note:'※ 증빙: 1~9월 EV 계약건 계약서/요청 매매주문서 캡처본 (동일 고객 증빙)'
+    note:'※ 제 3자 공동명의 적용 가능'
   },
   'before-service-20': {
-    name:'비포 서비스 애프터 세일즈', badge:'신규', period:'상시',
+    name:'비포 서비스 애프터 세일즈', badge:null, period:'상시',
     desc:'비포서비스 점검 고객 신차 구매 지원금',
     rows:[
       {label:'지원금액', val:'20만원'},
-      {label:'대상차종', val:'국내승용 전차종'},
+      {label:'대상차종', val:'국내승용 전차종 (투싼 NX5 등 일부 제외)'},
       {label:'대상', val:'비포서비스 점검일 기준 M+3월 말일까지 신차 구매 고객 (비포 받은 업체 재직 임직원 포함)'},
     ],
     note:''
@@ -1783,7 +1826,7 @@ const TARGETS = {
     note:'※ 원콜·노후차 타겟과 중복 적용 불가'
   },
   'mighty-bulk': {
-    name:'마이티 대량수요 묶기 조건', badge:'신규', period:'상시',
+    name:'마이티 대량수요 묶기 조건', badge:null, period:'상시',
     desc:'마이티 2대 이상 묶기 출고 지원금',
     rows:[
       {label:'지원금액', val:'2~4대 50만원 / 5대 이상 100만원'},
@@ -1816,72 +1859,64 @@ const INCENTIVE = {
   notice: '직영 카마스터 전용 자료입니다. 외부 유출 엄금.',
   general: [
     {
-      name: '현대 하이브리드 판매 우수 판촉지원금',
-      period: '10월', badge: '★신규',
+      name: 'K-세일페스타 판매 우수 판촉지원금',
+      period: '11월', badge: '★신규',
+      desc: '고객은 무상장착 혜택, 카마스터는 풍성한 판촉지원금!',
       rows: [
-        {label:'2대 출고', amt:'대당 35만원', cond:'그랜저·싼타페·팰리세이드·스타리아 HEV'},
-        {label:'3대 이상 출고', amt:'대당 70만원', cond:'그랜저·싼타페·팰리세이드·스타리아 HEV'},
+        {label:'3대', amt:'100만원', cond:'아반떼·그랜저·싼타페·G80·GV70 (HEV 포함, N 포함, 전동화 제외) 합산 출고'},
+        {label:'4대 이상', amt:'대당 50만원', cond:'위 동일 차종 합산 출고'},
       ],
-      note: '대상: 지점 카마스터 / 11월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감)'
+      note: '대상: 지점 카마스터 / 12월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감)'
     },
     {
-      name: 'EV 전환 출고 판촉지원금',
-      period: '10월', badge: '★신규',
+      name: 'G90 판매 우수 판촉지원금',
+      period: '11월', badge: '★신규',
       rows: [
-        {label:'지점 카마스터', amt:'대당 50만원', cond:'202610A09·202610A11 타겟 적용 출고 時'},
+        {label:'지점 카마스터', amt:'대당 100만원', cond:'G90 개인(AA1)·개인사업자(BA1) 출고 限'},
       ],
-      note: '11월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감) / 중복 가능으로 대당 최대 120만원 판촉지원금 포상'
+      note: '12월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감)'
     },
     {
       name: 'GV80 하이브리드 판매 우수 판촉지원금',
-      period: '10월 16일 이내 계약', badge: '★신규',
+      period: '10월 16일 이내 계약', badge: '유지',
       rows: [
-        {label:'지점 카마스터·대리점', amt:'대당 10만원', cond:'GV80 하이브리드, 10월 16일 이내 계약 + 연내 출고'},
+        {label:'지점 카마스터', amt:'대당 10만원', cond:'GV80 하이브리드, 10월 16일 이내 계약 + 연내 출고'},
       ],
-      note: '구매고객 계약금 50만원 D/C 별도 적용 / 11월 10일 기준 재평가 진행 후 포상'
+      note: '구매고객 계약금 50만원 D/C 별도 적용 / 12월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감)'
     },
     {
       name: '아반떼 판매 우수 판촉지원금',
-      period: '10월', badge: '★신규',
+      period: '10월 內 계약', badge: '유지',
       rows: [
-        {label:'지점 카마스터·대리점', amt:'대당 10만원', cond:'아반떼 CN8 (하이브리드 포함, N 제외), 10월 內 계약 + 연내 출고'},
+        {label:'지점 카마스터', amt:'대당 10만원', cond:'아반떼 CN8 (하이브리드 포함, N 제외), 10월 內 계약 + 연내 출고'},
       ],
-      note: '11월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감)'
+      note: '12월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감)'
     },
     {
-      name: '그랜저 영업용 판촉지원금',
-      period: '10월 상시', badge: '유지',
+      name: '넥쏘 판촉지원금',
+      period: '11월 상시', badge: '유지',
       rows: [
-        {label:'지점 카마스터', amt:'대당 50만원', cond:'2026 그랜저 영업용 판매 時'},
+        {label:'지점 카마스터', amt:'대당 50만원', cond:'넥쏘 판매 時'},
       ],
-      note: '11월 10일 기준 재평가 진행 후 포상'
+      note: '12월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감)'
     },
     {
       name: '캐스퍼 판촉지원금',
-      period: '10월 상시', badge: '유지',
+      period: '11월 상시', badge: '유지',
       rows: [
-        {label:'캐스퍼 (내연)', amt:'대당 5만원', cond:'지점 카마스터·대리점'},
-        {label:'캐스퍼 일렉트릭', amt:'대당 10만원', cond:'지점 카마스터·대리점'},
+        {label:'캐스퍼 (내연)', amt:'대당 5만원', cond:'지점 카마스터'},
+        {label:'캐스퍼 일렉트릭', amt:'대당 10만원', cond:'지점 카마스터'},
       ],
       note: '캐스퍼 고객케어지원금 인정기준 충족 시 대상 (고객케어지원금과 별도 지급) / 고객케어지원금은 온라인 계약 시 \'구매지원 카마스터\' 고객 직접 입력 必'
     },
     {
-      name: '넥쏘 판촉지원금',
-      period: '10월 상시', badge: '강화',
-      rows: [
-        {label:'지점 카마스터·대리점', amt:'대당 50만원', cond:'넥쏘 판매 時'},
-      ],
-      note: '11월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감) — 9월 30만원 대비 상향'
-    },
-    {
       name: '200만 굿프렌드 판촉지원금',
-      period: '10월 상시', badge: '유지',
+      period: '11월 상시', badge: '유지',
       rows: [
         {label:'신규가망 - 지점 카마스터', amt:'대당 10만 CRM포인트', cond:'월 2대 이상 出'},
         {label:'기출고전담 - 지점 카마스터', amt:'대당 5만 CRM포인트', cond:'월 2대 이상 出'},
-        {label:'신규가망 - 대리점', amt:'대당 5만원', cond:'굿프렌드 구축 1개월 경과 후 계약 건 출고'},
       ],
-      note: '굿 프렌드 구축 1개월 경과 후 계약 건 출고 시 적용 / 당월 대리점 전체 출고 中 굿프렌드 적용 건 10% 이상 必'
+      note: '굿 프렌드 구축 1개월 경과 후 계약 건 출고 시 적용 / 고객 혜택: 신규가망 15만, 기출고 전담 10만 (국내승용)'
     },
     {
       name: '현대차증권 X 현대자동차 제휴 프로모션',
@@ -1896,93 +1931,43 @@ const INCENTIVE = {
   ],
   truck: [
     {
-      name: '엑시언트 전략차종(트랙터·8X4덤프) 판촉지원금',
-      period: '10월', badge: '유지',
+      name: '마이티 재고 판촉지원금 확대',
+      period: '11월', badge: '강화',
       rows: [
-        {label:'1대', amt:'30만원', cond:'트랙터·8X4덤프 합산 실출고'},
-        {label:'2대', amt:'100만원', cond:'트랙터·8X4덤프 합산 실출고'},
-        {label:'3대 이상', amt:'대당 60만원', cond:'트랙터·8X4덤프 합산 실출고'},
+        {label:"마이티 ('26년 4~5월 생산)", amt:'대당 150만원', cond:'지점 카마스터'},
       ],
-      note: '대상: 트럭지점 카마스터 / 10월 실출고 실적 기준'
+      note: "대상: 지점 카마스터 / 11월 실출고 실적 기준 평가 (대량수요 차감·실적 제외 대상 기준 별첨 참조)"
     },
     {
-      name: '마이티·엑시언트 재고 판촉지원금 확대',
-      period: '10월', badge: '유지',
+      name: '중형트럭 구매 부담Down / 트레이드인 판촉지원금',
+      period: '11월', badge: '강화',
       rows: [
-        {label:"엑시언트 ('25년 6~7월 생산)", amt:'대당 200만원', cond:''},
-        {label:"엑시언트 ('25년 8~9월 생산)", amt:'대당 100만원', cond:''},
-        {label:"마이티 ('26년 4~5월 생산)", amt:'대당 80만원', cond:''},
-        {label:"엑시언트 트랙터·8X4덤프 ('26년 4~5월 생산)", amt:'대당 50만원', cond:''},
+        {label:'구매 부담Down', amt:'50만원', cond:'마이티·파비스 구매 부담Down 할부 이용 첫 출고 時'},
+        {label:'트레이드인', amt:'50만원', cond:'① 커머셜 제휴물류사 ② 글로비스 오토벨 ③ 직트럭 트레이드인 이용 첫 출고 時'},
       ],
-      note: '대상: 지점 카마스터·대리점 / 10월 실출고 실적 기준'
+      note: '대상: 지점 카마스터 / 12월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감)'
     },
     {
-      name: '중형트럭 구매부담Down 판촉지원금',
-      period: '10월', badge: '강화',
+      name: '세일즈 아카데미 연계 상용 판촉 지원',
+      period: "'26년 3월 ~ 11월 (11월 출고분)", badge: '유지',
       rows: [
-        {label:'마이티·파비스', amt:'50만원', cond:'구매 부담Down 할부 이용 첫 출고 時'},
+        {label:'트럭 Fast Track (Essence + Advance)', amt:'50만 CRM포인트', cond:"'25년 중형트럭 미출고 카마스터가 '26년 첫 중형트럭 출고 時"},
       ],
-      note: '11월 10일 기준 재평가 진행 후 포상 (매출취소·미등록 차감) — 9월 20만원 대비 상향'
-    },
-    {
-      name: '대량수요 묶기 조건',
-      period: '10월', badge: '★신규',
-      rows: [
-        {label:'엑시언트 2~4대', amt:'대당 100만원', cond:'동일 거점/카마스터/업체 + 동일 계약일·배정요청일 묶기 출고'},
-        {label:'엑시언트 5대 이상', amt:'대당 200만원', cond:'위 동일 조건'},
-        {label:'마이티 2~4대', amt:'대당 50만원', cond:'위 동일 조건'},
-        {label:'마이티 5대 이상', amt:'대당 100만원', cond:'위 동일 조건'},
-      ],
-      note: '대상: 마이티·엑시언트 2대 이상 구매 고객 (개인/개인사업자/법인직구매/실차주)'
-    },
-    {
-      name: '미쉐린 제휴 엑시언트 카고·트랙터 출고 고객 지원',
-      period: '10월 상시', badge: '유지',
-      rows: [
-        {label:'미쉐린 옵션 적용 출고 고객', amt:'타이어 할인 멤버십 쿠폰 (17만원 상당)', cond:'엑시언트 카고·트랙터 限'},
-      ],
-      note: '출고 대수별 해당 트럭지점에 지급'
+      note: "대상: 상용 교육 과정 이수자 中 중형트럭 판매 지점 카마스터 (트럭지점 포함) / 교육 이수월 기준 6개월 내 출고 限 / Essence·Advance·공통 과정별 조건(2대·3대 이상 판매 등)은 상용 비즈니스 플랜 PPT 원문 참조"
     },
   ],
   campaign: [
     {
-      name: '"3천만원을 잡아라" 계약 캠페인',
-      period: '10월', badge: '★신규',
-      desc: '지역본부 간 아반떼·그랜저(하이브리드 포함) 계약 달성률 경쟁 캠페인',
+      name: "'26년 10~11월 트레이드인 출고 캠페인",
+      period: '10/1 ~ 11/30 (2개월 합산)', badge: '유지',
+      desc: '트레이드인 출고 대수 구간별 판촉물 지급 (기간 합산)',
       rows: [
-        {label:'기준 달성 지역본부', amt:'총 계약대수 비율 기준 3,000만원 분배', cond:'기간 內 아반떼·그랜저 계약 달성률 100% 이상'},
+        {label:'2대', amt:'국민관광상품권 12만', cond:'지점 카마스터'},
+        {label:'3~4대', amt:'국민관광상품권 25만', cond:'지점 카마스터'},
+        {label:'5~6대', amt:'국민관광상품권 50만', cond:'지점 카마스터'},
+        {label:'7대 이상', amt:'국민관광상품권 75만', cond:'지점 카마스터'},
       ],
-      note: '10월 30일 18시 당월 계약 % 기준 (국내판매시스템 內 지역본부별 실적환산) / 천원 단위 반올림'
-    },
-    {
-      name: '제네시스 PLCC 2.0 발급 캠페인',
-      period: '10월', badge: '★신규',
-      desc: '지역본부 단위 제네시스 전용카드 발급 캠페인',
-      rows: [
-        {label:'기준 달성 지역본부', amt:'50만원', cond:'제네시스 전용카드 발급률 50% 이상 또는 발급매수 100매 이상'},
-      ],
-      note: '포상 관련 제네시스고객경험팀 별도 안내 예정'
-    },
-    {
-      name: '트랙터 구매 고객 제네시스 타겟 조건',
-      period: "'26.2월 이후 상시", badge: '유지',
-      desc: '엑시언트 트랙터 출고 고객 대상 제네시스 구매 시 타겟 조건',
-      rows: [
-        {label:'GV60·G70·GV70', amt:'50만원', cond:'엑시언트 트랙터 출고 고객 (개인·개인사업자 限)'},
-        {label:'G80·GV80', amt:'100만원', cond:'위 동일 조건'},
-        {label:'G90', amt:'200만원', cond:'위 동일 조건'},
-      ],
-      note: '트레이드-인, THE BETTER CHOICE 타겟조건과 중복 적용 불가 / 자동차 등록원부 첨부 必'
-    },
-    {
-      name: '엑시언트 대차 견인 수익성 계산기 배포 및 판촉활동 지원',
-      period: '10월', badge: '★신규',
-      desc: '트럭지점 대상 수익성 계산기 배포 및 집결지 중심 판촉활동비 지원',
-      rows: [
-        {label:'판촉활동비', amt:'거점당 최대 30만원', cond:'집결지 중심 판촉활동'},
-        {label:'우수 판촉 TOP5 지점', amt:'회의비 20만원 추가', cond:'수익성 계산기 활용 우수 판촉'},
-      ],
-      note: '상세 내용 별도 공지 예정'
+      note: '노후차 및 그룹/관계/협력사(AG1~AG5, AJ1~AJ2) 트레이드인도 실적 인정 / 12월 중순 매출취소·미등록 건 차감 후 재평가 (포상 시점 재직인원 限) / 누적 포상이 아닌 해당 실적 구간만 포상 / 판촉물은 공급사 사정 등으로 변경될 수 있음'
     },
   ],
 };
@@ -2157,11 +2142,11 @@ function _renderHome(){
 
   // Key conditions summary
   const keyItems=[
-    {icon:'🎉',title:'추석 가족사랑 100만원',desc:'싼타페·팰리세이드·스타리아 (AA1·BA1) / 9~10월'},
-    {icon:'⚡',title:'아이오닉 100만대 기념 150만원',desc:'아이오닉 5·6·9, 코나EV / 주요 EV 차종'},
-    {icon:'🚗',title:'EV to 내연 전환 출고 50만원',desc:'EV 고객 → 내연기관 전환 시 신규 혜택'},
-    {icon:'🏎️',title:'싼타페 8월 생산 200만원',desc:'싼타페 가솔린·HEV 8월 생산 차량'},
-    {icon:'♦',title:'제네시스 7월이전 재고 최대 5%',desc:'G80·GV70·GV80 7월이전 재고 할인'},
+    {icon:'🎉',title:'K-세일페스타 인기사양 무상장착',desc:'아반떼 100만 / 그랜저 140만 상당 (AA1·BA1) — 무상장착 사양 미선택 시 적용 불가'},
+    {icon:'🏎️',title:'싼타페 KSF 100만 또는 60M 무이자',desc:'무이자는 2,000대 한정 · 팰리세이드도 런칭모델 한정 60M 무이자'},
+    {icon:'♦',title:'G80·GV70 KSF 200만',desc:'G80 + 8월이전 재고 5% / GV70 + 8월이전 재고 3%'},
+    {icon:'🎁',title:'11월 서프라이즈 타겟 10만원',desc:'문자 수신 고객 (AA1·BA1) / 11/2~11/30 / 투싼·GV90·캐스퍼·상용·영업용 제외'},
+    {icon:'🔄',title:'하이브리드 트레이드인 100만 연장',desc:'그랜저·싼타페·팰리세이드·스타리아 HEV / 디 올 뉴 아반떼도 트레이드인 신규 적용'},
   ];
   const keyHtml=keyItems.map(i=>`
     <div class="hrow"><div class="hveh">${i.icon} ${_esc(i.title)}</div><div class="hcond">${_esc(i.desc)}</div></div>
@@ -2169,7 +2154,7 @@ function _renderHome(){
 
   pg.innerHTML=`
     <div class="hcard">
-      <div class="hcard-title">📌 10월 핵심 조건</div>
+      <div class="hcard-title">📌 11월 핵심 조건</div>
       ${keyHtml}
     </div>
     ${catCards}
@@ -2285,20 +2270,27 @@ function _buildVehicleSections(v,curVar){
     const sfData=sf[curVar];
     const hasConds=Object.values(sfData).some(Boolean);
     const sumStr=hasConds?Object.entries(sfData).filter(([,val])=>val).map(([k,val])=>`${k}: ${val}`).join(' / '):'해당없음';
-    html+=_buildSec('📅','생산월 조건',_buildMonthTable(sfData,curVar),
+    html+=_buildSec('📅','생산월 조건',_buildMonthTable(sfData,v.months),
       hasConds?Object.values(sfData).filter(Boolean)[0]:'없음',true);
   } else if(sf && Object.keys(sf).length && !v.variants){
     const firstVar=Object.keys(sf)[0];
     const sfData=sf[firstVar];
     const hasConds=Object.values(sfData||{}).some(Boolean);
-    html+=_buildSec('📅','생산월 조건',_buildMonthTable(sfData||{}),hasConds?'조건 있음':'없음',true);
+    html+=_buildSec('📅','생산월 조건',_buildMonthTable(sfData||{},v.months),hasConds?'조건 있음':'없음',true);
+  }
+
+  // K-세일페스타 특별조건
+  if(v.ksf){
+    html+=_buildSec('🎉','K-세일페스타 특별조건',
+      `<div class="fbox-promo"><div class="fbox-promo-title">K-세일페스타 (AA1·BA1 대상)</div><div class="fbox-promo-txt">${_esc(v.ksf)}</div></div>`,
+      v.ksfAmt?(v.ksfAmt+'만'):'',true);
   }
 
   // 제네시스 재고할인
   if(v.genesisStock){
     const gs=v.genesisStock;
     const cells=[
-      gs.pre6?`<div class="gstock-cell gstock-pre"><div class="gstock-label">5월이전 재고</div><div class="gstock-amt">${gs.pre6}</div></div>`:'',
+      gs.pre6?`<div class="gstock-cell gstock-pre"><div class="gstock-label">8월이전 생산 재고</div><div class="gstock-amt">${gs.pre6}</div></div>`:'',
       gs.jul?`<div class="gstock-cell gstock-jul"><div class="gstock-label">6월 재고</div><div class="gstock-amt">${gs.jul}</div></div>`:'',
     ].filter(Boolean);
     html+=_buildSec('💰','재고 할인',`<div class="gstock">${cells.join('')}</div>`,v.hl||'재고할인',true);
@@ -2416,11 +2408,12 @@ function _buildSec(ico,title,body,sum,open){
   </div>`;
 }
 
-function _buildMonthTable(sfData){
+function _buildMonthTable(sfData,months){
+  const MS=months||MONTHS;
   let html=`<table class="mtbl"><tr><th></th>`;
-  MONTHS.forEach(m=>{ html+=`<th>${_esc(m)}</th>`; });
-  html+=`</tr><tr><td style="font-size:.72rem;color:var(--gray);font-weight:600">썸머페스타</td>`;
-  MONTHS.forEach(m=>{
+  MS.forEach(m=>{ html+=`<th>${_esc(m)}</th>`; });
+  html+=`</tr><tr><td style="font-size:.72rem;color:var(--gray);font-weight:600">생산월 조건</td>`;
+  MS.forEach(m=>{
     const val=sfData[m];
     let cls='mc-none', txt='-';
     if(val){ cls='mc-has'; txt=val; }
@@ -2434,8 +2427,8 @@ function _buildMonthTable(sfData){
 function _renderDeliverySection(vid){
   const rows=DELIVERY[vid];
   if(!rows||!rows.length) return '<div style="padding:8px;color:#9ca3af;font-size:.8rem">납기 정보 없음</div>';
-  const dClass={'instant':'d-instant','3w':'d-3w','1m':'d-1m','1hm':'d-1h','2m':'d-2m','2hm':'d-2m','3m':'d-3m','3hm':'d-3m','4m':'d-4m','6m':'d-4m','none':'d-none'};
-  const dIcon={'instant':'즉시','3w':'3주','1m':'1개월','1hm':'1.5개월','2m':'2개월','2hm':'2.5개월','3m':'3개월','3hm':'3.5개월','4m':'4개월','6m':'6개월','none':'생산없음'};
+  const dClass={'instant':'d-instant','3w':'d-3w','1m':'d-1m','1hm':'d-1h','2m':'d-2m','2hm':'d-2m','3m':'d-3m','3hm':'d-3m','4m':'d-4m','6m':'d-4m','lot':'d-1h','none':'d-none'};
+  const dIcon={'instant':'즉시','3w':'3주','1m':'1개월','1hm':'1.5개월','2m':'2개월','2hm':'2.5개월','3m':'3개월','3hm':'3.5개월','4m':'4개월','6m':'6개월','lot':'로트생산','none':'생산없음'};
   let html='<div class="delivery-wrap">';
   rows.forEach(r=>{
     const cls=dClass[r.d]||'d-none';
@@ -2560,22 +2553,22 @@ function calcPriceOptTotal(vid,basePrice){
 function _renderTargetsPage(){
   const pg=document.getElementById('pg-targets');
   if(!pg) return;
-  let html=`<div class="hcard"><div class="hcard-title">🎯 2026년 10월 판촉 타겟 조건</div>
+  let html=`<div class="hcard"><div class="hcard-title">🎯 2026년 11~12월 판촉 타겟 조건</div>
   <div style="font-size:.8rem;color:#374151;line-height:1.7">각 타겟 조건을 확인하고 해당 고객 상담 시 활용하세요.</div></div>`;
 
   // family love special highlight
   html+=`<div style="background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:14px;padding:16px;margin-bottom:10px;box-shadow:var(--shadow)">
-    <div style="font-size:.78rem;opacity:.8;margin-bottom:4px">★ 신규 — 2026.09.01~10.31</div>
-    <div style="font-size:1.1rem;font-weight:900;margin-bottom:4px">추석 가족사랑 조건 100만원</div>
-    <div style="font-size:.85rem;opacity:.9">싼타페·팰리세이드·스타리아 (AA1·BA1) — EV 제외</div>
-    <div style="font-size:.78rem;opacity:.75;margin-top:6px">썸머페스타 조건과 중복 적용 가능</div>
+    <div style="font-size:.78rem;opacity:.8;margin-bottom:4px">★ 신규 — 2026.11~12월</div>
+    <div style="font-size:1.1rem;font-weight:900;margin-bottom:4px">K-세일페스타 특별조건</div>
+    <div style="font-size:.85rem;opacity:.9">아반떼·그랜저 인기사양 무상장착 / 싼타페 100만 or 무이자 / G80·GV70 200만 (AA1·BA1)</div>
+    <div style="font-size:.78rem;opacity:.75;margin-top:6px">생산월 조건과 중복 적용 가능</div>
   </div>`;
 
   // EV to ICE
   html+=`<div style="background:linear-gradient(135deg,#065f46,#047857);color:#fff;border-radius:14px;padding:16px;margin-bottom:10px;box-shadow:var(--shadow)">
-    <div style="font-size:.78rem;opacity:.8;margin-bottom:4px">★ 신규</div>
-    <div style="font-size:1.1rem;font-weight:900;margin-bottom:4px">EV to 내연 전환 출고 혜택 50만원</div>
-    <div style="font-size:.85rem;opacity:.9">EV 차량 보유 고객 → 내연기관 차량 신규 출고 시</div>
+    <div style="font-size:.78rem;opacity:.8;margin-bottom:4px">★ 신규 — 2026.11.02~11.30</div>
+    <div style="font-size:1.1rem;font-weight:900;margin-bottom:4px">11월 서프라이즈 타겟 10만원 D/C</div>
+    <div style="font-size:.85rem;opacity:.9">서프라이즈 타겟 문자 수신 고객 (AA1·BA1) — 투싼·GV90·캐스퍼·상용·영업용 제외</div>
   </div>`;
 
   // All targets
@@ -2871,13 +2864,12 @@ function _ppBuildBenefits(cat,v,vr){
   const benefits=[];
   // summerFesta
   const sf=v.summerFesta&&v.summerFesta[vr];
-  if(sf){ Object.entries(sf).forEach(([m,amt])=>{ if(amt) benefits.push({id:'sf-'+m,label:`썸머페스타 (${m})`,amt:_parseAmt(amt)}); }); }
-  if(v.ioniq100k) benefits.push({id:'ioniq100k',label:`아이오닉 100만대 기념 ${v.ioniq100k}`,amt:_parseAmt(v.ioniq100k)});
+  if(sf){ Object.entries(sf).forEach(([m,amt])=>{ if(amt) benefits.push({id:'sf-'+m,label:`생산월 조건 (${m})`,amt:_parseAmt(amt)}); }); }
+  if(v.basicAmt) benefits.push({id:'basic',label:`기본조건 ${v.basicAmt}만`,amt:v.basicAmt});
+  if(v.ksfAmt) benefits.push({id:'ksf',label:`K-세일페스타 특별조건 ${v.ksfAmt}만`,amt:v.ksfAmt});
   if(v.tradeIn&&v.tradeIn.corp) benefits.push({id:'tradein-corp',label:`트레이드인 (법인) ${v.tradeIn.corp}`,amt:_parseAmt(v.tradeIn.corp)});
   if(v.tradeIn&&v.tradeIn.other) benefits.push({id:'tradein-other',label:`트레이드인 (개인) ${v.tradeIn.other}`,amt:_parseAmt(v.tradeIn.other)});
   if(v.exhibitCar) benefits.push({id:'exhibit',label:`전시차 출고 ${v.exhibitCar}`,amt:_parseAmt(v.exhibitCar)});
-  // family love
-  if(v.targets&&v.targets.includes('family-love')) benefits.push({id:'family-love',label:'추석 가족사랑 100만원',amt:100});
 
   if(!benefits.length){ area.innerHTML='<div style="font-size:.82rem;color:#9ca3af">적용 가능한 혜택이 없습니다</div>'; return; }
   area.innerHTML=`<div class="prop-check-grid">${benefits.map(b=>
@@ -2900,7 +2892,7 @@ function _ppGenerate(){
   const v=(VEHICLES[cat]||[]).find(x=>x.id===id);
   if(!v) return;
   const name=document.getElementById('pp-name')?.value||'고객';
-  const date=document.getElementById('pp-date')?.value||'2026-09-01';
+  const date=document.getElementById('pp-date')?.value||'2026-11-01';
   const vr=document.getElementById('pp-variant')?.value||'일반';
   const deposit=parseFloat(document.getElementById('pp-deposit')?.value)||0;
   const months=parseInt(document.getElementById('pp-months')?.value)||36;
@@ -2940,11 +2932,11 @@ function _ppGenerate(){
   result.innerHTML=`
   <div class="p-print-hdr">
     <span class="p-print-hdr-logo">현대자동차 충북지역본부</span>
-    <span class="p-print-hdr-info">2026년 10월 판매조건 기준 고객 제안서 | 상담일: ${date}</span>
+    <span class="p-print-hdr-info">2026년 11월 판매조건 기준 고객 제안서 | 상담일: ${date}</span>
   </div>
   <div class="result-card">
     <div class="result-hdr">
-      <div class="result-hdr-month">2026년 10월 판매조건 기준</div>
+      <div class="result-hdr-month">2026년 11월 판매조건 기준</div>
       <div class="result-hdr-model">${_esc(v.name)}${v.sub?' '+_esc(v.sub):''}</div>
       <div class="result-hdr-sub">${_esc(vr)} · ${_ppSelectedTrim||'트림 미선택'} | 고객명: ${_esc(name)}</div>
     </div>
@@ -2962,7 +2954,7 @@ function _ppGenerate(){
       <div class="result-finance-body">할부원금 ${financed.toLocaleString()}만원 → 월 약 ${Math.round(monthly/10000)}만원/월\n선수금 ${deposit.toLocaleString()}만원 별도</div>
     </div>`:''}
     <div class="result-notice">
-      ※ 본 제안서는 2026년 10월 판매조건 기준이며, 실제 출고 조건은 출고 시점 적용 조건에 따라 달라질 수 있습니다.<br>
+      ※ 본 제안서는 2026년 11월 판매조건 기준이며, 실제 출고 조건은 출고 시점 적용 조건에 따라 달라질 수 있습니다.<br>
       ※ 금융 조건은 신용등급에 따라 상이하며, 정확한 월 납입금은 금융사에 문의하세요.
     </div>
     <div class="result-closing">
@@ -3055,7 +3047,7 @@ function _renderHelpPage(){
   <div class="hcard" style="background:var(--amber-bg)">
     <div class="hcard-title" style="color:var(--amber)">⚠️ 유의사항</div>
     <div style="font-size:.8rem;color:#92400e;line-height:1.8">
-      • 본 자료는 2026년 10월 판매조건 기준입니다<br>
+      • 본 자료는 2026년 11월 판매조건(11~12월 판매조건표) 기준입니다<br>
       • 실제 출고 시점의 조건 적용 여부를 반드시 확인하세요<br>
       • 금융 조건은 고객 신용등급에 따라 상이할 수 있습니다<br>
       • 판촉지원금은 내부 자료이므로 외부 유출 엄금<br>
